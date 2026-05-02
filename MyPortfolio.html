@@ -1515,27 +1515,35 @@ footer {
       <div class="contact-info-title">Let's Build Something Secure.</div>
       <p class="contact-text">Whether you want to collaborate on a project, discuss cybersecurity, or just say hello — my inbox is always open. I'm actively looking for internship opportunities and interesting open-source collaborations.</p>
       <div class="contact-links">
-        <a href="mailto:ayushsharma@example.com" class="contact-link">
+        <a href="mailto:ayushssharmaa@gmail.com" class="contact-link">
           <span class="contact-link-icon">✉️</span>
           <div class="contact-link-info">
             <div class="contact-link-label">Email</div>
-            <div class="contact-link-value">ayushsharma@example.com</div>
+            <div class="contact-link-value">ayushssharmaa@gmail.com</div>
           </div>
           <span style="color:var(--text2);font-size:14px">→</span>
         </a>
-        <a href="https://linkedin.com/in/ayushsharma" target="_blank" class="contact-link">
+        <a href="https://linkedin.com/in/hackwithas" target="_blank" class="contact-link">
           <span class="contact-link-icon">💼</span>
           <div class="contact-link-info">
             <div class="contact-link-label">LinkedIn</div>
-            <div class="contact-link-value">linkedin.com/in/ayushsharma</div>
+            <div class="contact-link-value">linkedin.com/in/hackwithas</div>
           </div>
           <span style="color:var(--text2);font-size:14px">→</span>
         </a>
-        <a href="https://github.com/ayushsharma" target="_blank" class="contact-link">
+        <a href="https://github.com/Hackwithas" target="_blank" class="contact-link">
           <span class="contact-link-icon">⬡</span>
           <div class="contact-link-info">
             <div class="contact-link-label">GitHub</div>
-            <div class="contact-link-value">github.com/ayushsharma</div>
+            <div class="contact-link-value">github.com/Hackwithas</div>
+          </div>
+          <span style="color:var(--text2);font-size:14px">→</span>
+        </a>
+        <a href="https://wa.me/919627898972" target="_blank" class="contact-link">
+          <span class="contact-link-icon">💬</span>
+          <div class="contact-link-info">
+            <div class="contact-link-label">WhatsApp</div>
+            <div class="contact-link-value">+91 96278 98972</div>
           </div>
           <span style="color:var(--text2);font-size:14px">→</span>
         </a>
@@ -1544,19 +1552,19 @@ footer {
     <div class="reveal" style="transition-delay:0.2s">
       <div class="contact-form">
         <div class="form-group">
-          <input type="text" class="form-input" placeholder="Your Name" autocomplete="off">
+          <input type="text" id="cf-name" class="form-input" placeholder="Your Name" autocomplete="off">
         </div>
         <div class="form-group">
-          <input type="email" class="form-input" placeholder="your@email.com" autocomplete="off">
+          <input type="email" id="cf-email" class="form-input" placeholder="your@email.com" autocomplete="off">
         </div>
         <div class="form-group">
-          <input type="text" class="form-input" placeholder="Subject" autocomplete="off">
+          <input type="text" id="cf-subject" class="form-input" placeholder="Subject" autocomplete="off">
         </div>
         <div class="form-group">
-          <textarea class="form-textarea" placeholder="Your message..."></textarea>
+          <textarea id="cf-message" class="form-textarea" placeholder="Your message..."></textarea>
         </div>
         <button class="btn btn-primary form-submit" onclick="handleContact(event)">⬡ Send Message</button>
-        <div id="form-msg" style="font-family:var(--font-mono);font-size:12px;color:var(--green);display:none;letter-spacing:1px;">✓ Message sent successfully!</div>
+        <div id="form-msg" style="font-family:var(--font-mono);font-size:12px;display:none;letter-spacing:1px;margin-top:4px;"></div>
       </div>
     </div>
   </div>
@@ -1773,13 +1781,33 @@ function closeMobile() {
 }
 
 /* ============================================
-   CONTACT FORM
+   CONTACT FORM — mailto redirect
 ============================================ */
 function handleContact(e) {
   e.preventDefault();
-  const msg = document.getElementById('form-msg');
+  const name    = document.getElementById('cf-name').value.trim();
+  const email   = document.getElementById('cf-email').value.trim();
+  const subject = document.getElementById('cf-subject').value.trim();
+  const message = document.getElementById('cf-message').value.trim();
+  const msg     = document.getElementById('form-msg');
+
+  if (!name || !email || !message) {
+    msg.style.display = 'block';
+    msg.style.color = 'var(--red)';
+    msg.textContent = '⚠ Please fill in Name, Email and Message.';
+    setTimeout(() => { msg.style.display = 'none'; }, 3500);
+    return;
+  }
+
+  const mailSubject = encodeURIComponent(subject || `Portfolio Message from ${name}`);
+  const mailBody    = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+
+  window.location.href = `mailto:ayushssharmaa@gmail.com?subject=${mailSubject}&body=${mailBody}`;
+
   msg.style.display = 'block';
-  setTimeout(() => { msg.style.display = 'none'; }, 3500);
+  msg.style.color = 'var(--green)';
+  msg.textContent = '✓ Opening your mail app...';
+  setTimeout(() => { msg.style.display = 'none'; }, 4000);
 }
 
 /* ============================================
