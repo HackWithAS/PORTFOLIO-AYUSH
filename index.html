@@ -743,7 +743,7 @@
 
     <div class="hero-stats">
       <div class="stat-item">
-        <div class="stat-num" data-target="5">0</div>
+        <div class="stat-num" data-target="7">0</div>
         <div class="stat-label">Projects</div>
       </div>
       <div class="stat-item">
@@ -954,32 +954,94 @@
         </div>
       </div>
 
-      <div class="project-card reveal">
+      <!-- IIoT Category Header -->
+      <div style="grid-column:1/-1;margin-top:16px;margin-bottom:-4px">
+        <div style="display:flex;align-items:center;gap:12px">
+          <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--neon-orange);letter-spacing:3px;text-transform:uppercase">// Industrial IoT Projects</span>
+          <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(255,107,0,0.4),transparent)"></span>
+          <span style="background:rgba(255,107,0,0.1);border:1px solid rgba(255,107,0,0.3);color:var(--neon-orange);padding:3px 12px;font-family:var(--font-mono);font-size:0.65rem;letter-spacing:1px;border-radius:2px"><i class="fas fa-crown"></i> Team Lead — All 3</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal" style="border-color:rgba(255,107,0,0.18)">
         <div class="project-header">
           <span class="project-icon">💡</span>
-          <span class="project-num">03</span>
+          <span class="project-num" style="color:rgba(255,107,0,0.12)">03</span>
         </div>
-        <h3 class="project-title">Smart Street Light IoT System</h3>
-        <div class="project-team-lead"><i class="fas fa-crown"></i> Team Lead</div>
-        <p class="project-desc">Led a team to design and implement a smart street lighting system using IoT sensors. The system automatically adjusts brightness based on ambient light and detects motion, significantly reducing energy consumption.</p>
+        <h3 class="project-title">Smart Street Light System</h3>
+        <div class="project-team-lead"><i class="fas fa-crown"></i> Team Lead &nbsp;|&nbsp; <i class="fas fa-industry"></i> Industrial IoT</div>
+        <p class="project-desc">IoT-based automated street lighting solution using sensor-based control. The system uses LDR and motion sensors to automatically manage lighting intensity, reducing energy waste and enabling remote monitoring of street infrastructure.</p>
         <div class="project-tech">
           <span class="tech-tag">IoT</span>
           <span class="tech-tag">Arduino</span>
-          <span class="tech-tag">Sensors</span>
+          <span class="tech-tag">LDR Sensor</span>
+          <span class="tech-tag">Motion Sensor</span>
           <span class="tech-tag">C++</span>
           <span class="tech-tag">Hardware</span>
         </div>
         <div class="project-links">
-          <span class="btn-project no-link">
-            <i class="fas fa-microchip"></i> Hardware Project
+          <span class="btn-project no-link" style="border-color:rgba(255,107,0,0.2);color:var(--neon-orange)">
+            <i class="fas fa-microchip"></i> Hardware / IIoT
           </span>
+        </div>
+      </div>
+
+      <div class="project-card reveal" style="border-color:rgba(255,107,0,0.18)">
+        <div class="project-header">
+          <span class="project-icon">⚙️</span>
+          <span class="project-num" style="color:rgba(255,107,0,0.12)">04</span>
+        </div>
+        <h3 class="project-title">RPM Monitoring System <span style="font-size:0.75rem;color:var(--neon-orange);font-family:var(--font-mono)">(IIOT-4)</span></h3>
+        <div class="project-team-lead"><i class="fas fa-crown"></i> Team Lead &nbsp;|&nbsp; <i class="fas fa-industry"></i> Industrial IoT</div>
+        <p class="project-desc">Industrial RPM monitoring and measurement system for real-time machinery performance tracking. Enables proactive maintenance by continuously measuring rotational speed of industrial equipment and logging performance data for analysis.</p>
+        <div class="project-tech">
+          <span class="tech-tag">IIoT</span>
+          <span class="tech-tag">RPM Sensor</span>
+          <span class="tech-tag">Arduino</span>
+          <span class="tech-tag">Real-time Data</span>
+          <span class="tech-tag">Industrial</span>
+        </div>
+        <div class="project-links">
+          <span class="btn-project no-link" style="border-color:rgba(255,107,0,0.2);color:var(--neon-orange)">
+            <i class="fas fa-tachometer-alt"></i> Hardware / IIoT
+          </span>
+        </div>
+      </div>
+
+      <div class="project-card reveal" style="border-color:rgba(255,107,0,0.18)">
+        <div class="project-header">
+          <span class="project-icon">🏭</span>
+          <span class="project-num" style="color:rgba(255,107,0,0.12)">05</span>
+        </div>
+        <h3 class="project-title">CCFRA Automation System <span style="font-size:0.75rem;color:var(--neon-orange);font-family:var(--font-mono)">(IIOT-3)</span></h3>
+        <div class="project-team-lead"><i class="fas fa-crown"></i> Team Lead &nbsp;|&nbsp; <i class="fas fa-industry"></i> Industrial IoT</div>
+        <p class="project-desc">IIoT-based automation and control system for industrial process monitoring. Designed for real-time control and feedback of industrial processes, enabling efficient operation management, automated responses, and data-driven decision-making on the factory floor.</p>
+        <div class="project-tech">
+          <span class="tech-tag">IIoT</span>
+          <span class="tech-tag">Automation</span>
+          <span class="tech-tag">Process Control</span>
+          <span class="tech-tag">Sensors</span>
+          <span class="tech-tag">Industrial</span>
+        </div>
+        <div class="project-links">
+          <span class="btn-project no-link" style="border-color:rgba(255,107,0,0.2);color:var(--neon-orange)">
+            <i class="fas fa-cogs"></i> Hardware / IIoT
+          </span>
+        </div>
+      </div>
+
+      <!-- Web / AI Projects divider -->
+      <div style="grid-column:1/-1;margin-top:16px;margin-bottom:-4px">
+        <div style="display:flex;align-items:center;gap:12px">
+          <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--neon-cyan);letter-spacing:3px;text-transform:uppercase">// Web &amp; AI Projects</span>
+          <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(0,245,255,0.4),transparent)"></span>
         </div>
       </div>
 
       <div class="project-card reveal">
         <div class="project-header">
           <span class="project-icon">🤖</span>
-          <span class="project-num">04</span>
+          <span class="project-num">06</span>
         </div>
         <h3 class="project-title">AI Research Travel Agent</h3>
         <p class="project-desc">An AI-powered travel research agent that intelligently aggregates travel data, suggests itineraries, and provides personalized travel recommendations using AI/ML techniques and web scraping.</p>
@@ -999,7 +1061,7 @@
       <div class="project-card reveal">
         <div class="project-header">
           <span class="project-icon">🍽️</span>
-          <span class="project-num">05</span>
+          <span class="project-num">07</span>
         </div>
         <h3 class="project-title">Restaurant Website</h3>
         <p class="project-desc">A fully responsive restaurant website featuring an interactive menu, reservation system, and elegant UI. Built with modern web technologies and optimized for SEO and performance.</p>
