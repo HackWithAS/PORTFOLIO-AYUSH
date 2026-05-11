@@ -75,6 +75,7 @@ nav{
   backdrop-filter:blur(20px);
   border-bottom:1px solid rgba(0,255,180,0.07);
   transition:padding .3s var(--ease);
+  pointer-events:auto;
 }
 nav.sh{padding:12px 48px;border-bottom-color:rgba(0,255,180,0.12);}
 
@@ -112,6 +113,8 @@ nav.sh{padding:12px 48px;border-bottom-color:rgba(0,255,180,0.12);}
   padding:8px 20px;text-decoration:none;
   clip-path:polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%);
   transition:all .25s;font-weight:700;
+  position:relative;z-index:1001;
+  cursor:pointer;pointer-events:auto;
 }
 .nav-hire:hover{background:var(--white);transform:translateY(-1px);}
 
@@ -993,7 +996,7 @@ footer{
 <!-- NAV -->
 <nav id="nb">
   <a href="#hero" class="logo">
-    <img src="logo.png" alt="Hackwithas Logo" class="logo-img">
+    <img src="logo.png" alt="Ayush Sharma Logo" class="logo-img">
   </a>
   <ul class="nav-ul">
     <li><a href="#about">About</a></li>
@@ -1560,11 +1563,13 @@ target="_blank" rel="noopener" class="pbtn r">Site</a>
 /* ─── Intro Loader ─── */
 (function(){
   const loader = document.getElementById('intro-loader');
-  // Hide after 2.2s — enough for zoom + ring spin to feel premium
   setTimeout(()=>{
     loader.classList.add('hide');
-    // Remove from DOM after transition
-    setTimeout(()=>{ loader.style.display='none'; }, 700);
+    setTimeout(()=>{
+      loader.style.display='none';
+      // Make sure nav and all interactive elements are fully accessible
+      document.querySelector('nav').style.pointerEvents='auto';
+    }, 700);
   }, 2200);
 })();
 
