@@ -520,12 +520,13 @@ section{position:relative;z-index:1;padding:100px 80px;}
   background:rgba(0,0,0,.35);padding:2px 8px;
   border-radius:2px;border:1px solid rgba(255,255,255,.04);
 }
-.proj-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;}
+.proj-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;position:relative;z-index:10;}
 .pbtn{
   display:inline-flex;align-items:center;gap:5px;
   padding:6px 13px;font-family:var(--mono);font-size:.67rem;
   text-decoration:none;border-radius:2px;border:1px solid;
   transition:all .2s;letter-spacing:.5px;cursor:pointer;
+  position:relative;z-index:10;
 }
 .pbtn.r{border-color:rgba(0,255,179,.22);color:var(--accent);background:rgba(0,255,179,.04);}
 .pbtn.r:hover{background:rgba(0,255,179,.12);border-color:var(--accent);}
@@ -542,26 +543,174 @@ section{position:relative;z-index:1;padding:100px 80px;}
 .div-row span:first-child{font-family:var(--mono);font-size:.65rem;letter-spacing:3px;text-transform:uppercase;}
 .div-row .line{flex:1;height:1px;}
 
-/* ════════ CERTS ════════ */
+/* ════════ LOGO ENTRY ANIMATION ════════ */
+@keyframes logoEntry{
+  0%{opacity:0;transform:translateX(-30px) scale(0.8);filter:drop-shadow(0 0 0px rgba(0,255,179,0));}
+  60%{opacity:1;transform:translateX(4px) scale(1.08);filter:drop-shadow(0 0 18px rgba(0,255,179,0.7));}
+  80%{transform:translateX(-2px) scale(0.97);}
+  100%{opacity:1;transform:translateX(0) scale(1);filter:drop-shadow(0 0 8px rgba(0,255,179,0.35));}
+}
+.logo-img{
+  animation:logoEntry 1s cubic-bezier(0.23,1,0.32,1) both;
+}
+
+/* ════════ PROJECT LINKS FIX ════════ */
+.proj-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;position:relative;z-index:10;}
+
+/* ════════ PREMIUM CERTIFICATIONS ════════ */
 #certifications{background:rgba(0,5,12,.55);}
-.certs-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;}
+
+.cert-section-subtitle{
+  font-size:.93rem;color:var(--muted);
+  max-width:580px;margin-bottom:52px;line-height:1.7;
+}
+
+.certs-g{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:22px;
+}
+
 .cert-card{
-  background:var(--card);border:1px solid var(--border);
-  padding:22px;border-radius:4px;
-  transition:all .3s;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,rgba(17,24,32,0.95) 0%,rgba(10,18,28,0.98) 100%);
+  border:1px solid rgba(0,255,179,0.12);
+  padding:28px;border-radius:12px;
+  transition:all .4s cubic-bezier(0.23,1,0.32,1);
+  position:relative;overflow:hidden;
+  cursor:pointer;
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  text-decoration:none;
+  display:flex;flex-direction:column;
+  box-shadow:0 4px 24px rgba(0,0,0,0.4);
 }
-.cert-card:hover{border-color:rgba(0,255,179,.3);transform:translateY(-3px);}
-.cert-icon{font-size:1.9rem;margin-bottom:12px;}
+.cert-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(0,255,179,0.04) 0%,transparent 60%);
+  opacity:0;transition:opacity .4s;border-radius:12px;
+}
+.cert-card:hover{
+  transform:translateY(-6px) scale(1.01);
+  border-color:rgba(0,255,179,0.45);
+  box-shadow:
+    0 0 0 1px rgba(0,255,179,0.15),
+    0 20px 60px rgba(0,255,179,0.1),
+    0 8px 32px rgba(0,0,0,0.5),
+    inset 0 1px 0 rgba(0,255,179,0.08);
+}
+.cert-card:hover::before{opacity:1;}
+
+.cert-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(0,255,179,0.08);
+  border:1px solid rgba(0,255,179,0.25);
+  color:var(--accent);
+  padding:4px 10px;border-radius:20px;
+  font-family:var(--mono);font-size:.58rem;letter-spacing:1.5px;
+  text-transform:uppercase;
+  margin-bottom:18px;
+  width:fit-content;
+  position:relative;z-index:1;
+}
+.cert-badge i{font-size:.6rem;}
+
+.cert-icon-wrap{
+  width:54px;height:54px;
+  background:rgba(0,255,179,0.07);
+  border:1px solid rgba(0,255,179,0.18);
+  border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;
+  margin-bottom:18px;
+  transition:all .4s;
+  position:relative;z-index:1;
+}
+.cert-card:hover .cert-icon-wrap{
+  background:rgba(0,255,179,0.14);
+  border-color:rgba(0,255,179,0.4);
+  box-shadow:0 0 20px rgba(0,255,179,0.15);
+  transform:scale(1.08);
+}
+
 .cert-title{
-  font-size:.93rem;font-weight:600;color:var(--light);
-  margin-bottom:5px;line-height:1.4;font-family:var(--body);
+  font-family:var(--head);font-size:1rem;font-weight:700;
+  color:var(--white);margin-bottom:5px;line-height:1.35;
+  letter-spacing:-.2px;
+  position:relative;z-index:1;
 }
-.cert-org{font-family:var(--mono);font-size:.67rem;color:var(--accent);letter-spacing:1px;}
+.cert-org{
+  font-family:var(--mono);font-size:.68rem;color:var(--accent);
+  letter-spacing:1px;margin-bottom:12px;
+  position:relative;z-index:1;
+}
+.cert-desc{
+  font-size:.83rem;color:var(--muted);
+  line-height:1.6;margin-bottom:20px;flex:1;
+  position:relative;z-index:1;
+}
+
+.cert-view-btn{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:9px 16px;
+  background:rgba(0,255,179,0.07);
+  border:1px solid rgba(0,255,179,0.25);
+  color:var(--accent);
+  border-radius:6px;
+  font-family:var(--mono);font-size:.68rem;letter-spacing:1px;
+  font-weight:600;text-transform:uppercase;
+  transition:all .3s;
+  width:fit-content;
+  position:relative;z-index:2;
+  text-decoration:none;
+}
+.cert-card:hover .cert-view-btn{
+  background:rgba(0,255,179,0.15);
+  border-color:var(--accent);
+  box-shadow:0 0 16px rgba(0,255,179,0.2);
+  gap:10px;
+}
+
 .cert-glow{
-  position:absolute;bottom:-20px;right:-20px;
-  width:80px;height:80px;border-radius:50%;
-  background:radial-gradient(circle,rgba(0,255,179,.05),transparent);
+  position:absolute;bottom:-30px;right:-30px;
+  width:120px;height:120px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,255,179,0.06),transparent 70%);
+  transition:all .4s;pointer-events:none;
 }
+.cert-card:hover .cert-glow{
+  width:180px;height:180px;
+  bottom:-50px;right:-50px;
+  background:radial-gradient(circle,rgba(0,255,179,0.1),transparent 70%);
+}
+
+/* TCS — blue accent */
+.cert-card.cert-tcs{border-color:rgba(0,122,255,0.15);}
+.cert-card.cert-tcs .cert-icon-wrap{background:rgba(0,122,255,0.08);border-color:rgba(0,122,255,0.22);}
+.cert-card.cert-tcs:hover{border-color:rgba(0,122,255,0.5);box-shadow:0 0 0 1px rgba(0,122,255,0.15),0 20px 60px rgba(0,122,255,0.1),0 8px 32px rgba(0,0,0,0.5);}
+.cert-card.cert-tcs .cert-badge,.cert-card.cert-tcs .cert-org{color:#4d9fff;}
+.cert-card.cert-tcs .cert-badge{background:rgba(0,122,255,0.08);border-color:rgba(0,122,255,0.25);}
+.cert-card.cert-tcs .cert-view-btn{color:#4d9fff;background:rgba(0,122,255,0.07);border-color:rgba(0,122,255,0.25);}
+.cert-card.cert-tcs:hover .cert-view-btn{background:rgba(0,122,255,0.15);border-color:#4d9fff;box-shadow:0 0 16px rgba(0,122,255,0.2);}
+.cert-card.cert-tcs .cert-glow{background:radial-gradient(circle,rgba(0,122,255,0.07),transparent 70%);}
+
+/* EduSkills — purple accent */
+.cert-card.cert-edu{border-color:rgba(123,94,167,0.15);}
+.cert-card.cert-edu .cert-icon-wrap{background:rgba(123,94,167,0.08);border-color:rgba(123,94,167,0.22);}
+.cert-card.cert-edu:hover{border-color:rgba(176,111,255,0.5);box-shadow:0 0 0 1px rgba(176,111,255,0.15),0 20px 60px rgba(176,111,255,0.1),0 8px 32px rgba(0,0,0,0.5);}
+.cert-card.cert-edu .cert-badge,.cert-card.cert-edu .cert-org{color:#b06fff;}
+.cert-card.cert-edu .cert-badge{background:rgba(123,94,167,0.08);border-color:rgba(123,94,167,0.25);}
+.cert-card.cert-edu .cert-view-btn{color:#b06fff;background:rgba(123,94,167,0.07);border-color:rgba(123,94,167,0.25);}
+.cert-card.cert-edu:hover .cert-view-btn{background:rgba(123,94,167,0.15);border-color:#b06fff;box-shadow:0 0 16px rgba(176,111,255,0.2);}
+.cert-card.cert-edu .cert-glow{background:radial-gradient(circle,rgba(123,94,167,0.08),transparent 70%);}
+
+/* Ethical Hacking — red accent */
+.cert-card.cert-hack{border-color:rgba(255,79,94,0.15);}
+.cert-card.cert-hack .cert-icon-wrap{background:rgba(255,79,94,0.08);border-color:rgba(255,79,94,0.22);}
+.cert-card.cert-hack:hover{border-color:rgba(255,79,94,0.5);box-shadow:0 0 0 1px rgba(255,79,94,0.15),0 20px 60px rgba(255,79,94,0.1),0 8px 32px rgba(0,0,0,0.5);}
+.cert-card.cert-hack .cert-badge,.cert-card.cert-hack .cert-org{color:#ff7d88;}
+.cert-card.cert-hack .cert-badge{background:rgba(255,79,94,0.08);border-color:rgba(255,79,94,0.25);}
+.cert-card.cert-hack .cert-view-btn{color:#ff7d88;background:rgba(255,79,94,0.07);border-color:rgba(255,79,94,0.25);}
+.cert-card.cert-hack:hover .cert-view-btn{background:rgba(255,79,94,0.15);border-color:#ff7d88;box-shadow:0 0 16px rgba(255,79,94,0.2);}
+.cert-card.cert-hack .cert-glow{background:radial-gradient(circle,rgba(255,79,94,0.07),transparent 70%);}
 
 /* ════════ GITHUB ════════ */
 #gh-sec{padding:60px 80px;}
@@ -1077,33 +1226,63 @@ target="_blank" rel="noopener" class="pbtn r">Site</a>
 <section id="certifications">
   <div class="si">
     <div class="stag">04 — Certifications</div>
-    <h2 class="stitle">EARNED <span>CREDENTIALS</span></h2>
+    <h2 class="stitle">CERTIFICATIONS <span>&amp; ACHIEVEMENTS</span></h2>
     <div class="sline"></div>
+    <p class="cert-section-subtitle">Professional certifications and learning milestones in development, cybersecurity, and emerging technologies.</p>
     <div class="certs-g">
-      <div class="cert-card rv">
-        <div class="cert-icon">🤖</div>
+
+      <!-- TCS iON -->
+      <a class="cert-card cert-tcs rv"
+         href="https://www.linkedin.com/posts/hackwithas_tcs-ion-activity-7346773345272557568-IcWF"
+         target="_blank" rel="noopener noreferrer">
+        <div class="cert-badge"><i class="fas fa-check-circle"></i> Verified Credential</div>
+        <div class="cert-icon-wrap">🏢</div>
+        <h3 class="cert-title">TCS iON Certificate</h3>
+        <p class="cert-org">TATA CONSULTANCY SERVICES</p>
+        <p class="cert-desc">Industry-recognized certification from TCS iON covering professional skills and domain knowledge in technology and business fundamentals.</p>
+        <span class="cert-view-btn"><i class="fab fa-linkedin"></i> View Credential <i class="fas fa-arrow-right"></i></span>
+        <div class="cert-glow"></div>
+      </a>
+
+      <!-- EduSkills AI-ML -->
+      <a class="cert-card cert-edu rv"
+         href="https://www.linkedin.com/posts/hackwithas_eduskill-activity-7439356208144338944-CAf5"
+         target="_blank" rel="noopener noreferrer">
+        <div class="cert-badge"><i class="fas fa-check-circle"></i> Verified Credential</div>
+        <div class="cert-icon-wrap">🤖</div>
         <h3 class="cert-title">AI-ML Virtual Internship</h3>
-        <p class="cert-org">Google for Developers × AICTE</p>
+        <p class="cert-org">EDUSKILLS × AICTE</p>
+        <p class="cert-desc">Hands-on AI and Machine Learning virtual internship covering practical ML concepts, model training, and real-world AI application development.</p>
+        <span class="cert-view-btn"><i class="fab fa-linkedin"></i> View Credential <i class="fas fa-arrow-right"></i></span>
         <div class="cert-glow"></div>
-      </div>
-      <div class="cert-card rv">
-        <div class="cert-icon">💼</div>
-        <h3 class="cert-title">Technology Job Simulation</h3>
-        <p class="cert-org">Deloitte Australia</p>
-        <div class="cert-glow"></div>
-      </div>
-      <div class="cert-card rv">
-        <div class="cert-icon">🌐</div>
-        <h3 class="cert-title">Website Development Course</h3>
-        <p class="cert-org">Infosys Springboard</p>
-        <div class="cert-glow"></div>
-      </div>
-      <div class="cert-card rv">
-        <div class="cert-icon">📊</div>
+      </a>
+
+      <!-- Data Structures -->
+      <a class="cert-card rv"
+         href="https://www.linkedin.com/posts/hackwithas_certificate-activity-7374697703471095808-hGG6"
+         target="_blank" rel="noopener noreferrer">
+        <div class="cert-badge"><i class="fas fa-check-circle"></i> Verified Credential</div>
+        <div class="cert-icon-wrap">📊</div>
         <h3 class="cert-title">Programming Foundations: Data Structures</h3>
-        <p class="cert-org">LinkedIn Learning</p>
+        <p class="cert-org">LINKEDIN LEARNING</p>
+        <p class="cert-desc">Comprehensive course on fundamental data structures including arrays, linked lists, trees, graphs, and algorithm complexity analysis.</p>
+        <span class="cert-view-btn"><i class="fab fa-linkedin"></i> View Credential <i class="fas fa-arrow-right"></i></span>
         <div class="cert-glow"></div>
-      </div>
+      </a>
+
+      <!-- Ethical Hacking -->
+      <a class="cert-card cert-hack rv"
+         href="https://www.linkedin.com/posts/hackwithas_ethical-hacking-activity-7448295280371765249-2gjU"
+         target="_blank" rel="noopener noreferrer">
+        <div class="cert-badge"><i class="fas fa-check-circle"></i> Verified Credential</div>
+        <div class="cert-icon-wrap">🛡️</div>
+        <h3 class="cert-title">Ethical Hacking Certificate</h3>
+        <p class="cert-org">CYBERSECURITY TRAINING</p>
+        <p class="cert-desc">Certification in ethical hacking methodologies covering penetration testing, vulnerability assessment, network security, and offensive security techniques.</p>
+        <span class="cert-view-btn"><i class="fab fa-linkedin"></i> View Credential <i class="fas fa-arrow-right"></i></span>
+        <div class="cert-glow"></div>
+      </a>
+
     </div>
   </div>
 </section>
