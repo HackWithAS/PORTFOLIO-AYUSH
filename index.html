@@ -543,7 +543,128 @@ section{position:relative;z-index:1;padding:100px 80px;}
 .div-row span:first-child{font-family:var(--mono);font-size:.65rem;letter-spacing:3px;text-transform:uppercase;}
 .div-row .line{flex:1;height:1px;}
 
-/* ════════ LOGO ENTRY ANIMATION ════════ */
+/* ════════ INTRO LOADER ════════ */
+#intro-loader{
+  position:fixed;inset:0;z-index:99999;
+  background:var(--ink);
+  display:flex;align-items:center;justify-content:center;
+  flex-direction:column;
+  transition:opacity .6s ease, visibility .6s ease;
+}
+#intro-loader.hide{
+  opacity:0;visibility:hidden;pointer-events:none;
+}
+
+.intro-logo-wrap{
+  position:relative;
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* Outer spinning ring */
+.intro-ring{
+  position:absolute;
+  width:180px;height:180px;
+  border-radius:50%;
+  border:1.5px solid transparent;
+  border-top-color:var(--accent);
+  border-right-color:rgba(0,255,179,0.3);
+  animation:introSpin 1.4s linear infinite;
+}
+.intro-ring-2{
+  position:absolute;
+  width:210px;height:210px;
+  border-radius:50%;
+  border:1px solid transparent;
+  border-bottom-color:rgba(0,255,179,0.18);
+  border-left-color:rgba(0,255,179,0.08);
+  animation:introSpin 2.2s linear infinite reverse;
+}
+
+@keyframes introSpin{to{transform:rotate(360deg)}}
+
+/* Logo zoom-in */
+.intro-logo{
+  width:110px;height:110px;object-fit:contain;
+  animation:introZoom 1.8s cubic-bezier(0.23,1,0.32,1) forwards;
+  filter:drop-shadow(0 0 0px rgba(0,255,179,0));
+  position:relative;z-index:2;
+}
+@keyframes introZoom{
+  0%{
+    transform:scale(0.2);
+    opacity:0;
+    filter:drop-shadow(0 0 0px rgba(0,255,179,0));
+  }
+  40%{
+    opacity:1;
+    filter:drop-shadow(0 0 30px rgba(0,255,179,0.9));
+  }
+  70%{
+    transform:scale(1.15);
+    filter:drop-shadow(0 0 50px rgba(0,255,179,1));
+  }
+  85%{
+    transform:scale(0.95);
+  }
+  100%{
+    transform:scale(1);
+    opacity:1;
+    filter:drop-shadow(0 0 16px rgba(0,255,179,0.5));
+  }
+}
+
+/* Radial glow burst behind logo */
+.intro-glow-burst{
+  position:absolute;
+  width:300px;height:300px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(0,255,179,0.12) 0%,transparent 70%);
+  animation:introBurst 1.8s cubic-bezier(0.23,1,0.32,1) forwards;
+}
+@keyframes introBurst{
+  0%{transform:scale(0);opacity:0;}
+  50%{opacity:1;}
+  100%{transform:scale(1.4);opacity:0.6;}
+}
+
+/* Grid lines fade in */
+.intro-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(0,255,180,.02) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,255,180,.02) 1px,transparent 1px);
+  background-size:60px 60px;
+  animation:introFadeIn .8s ease forwards;
+}
+@keyframes introFadeIn{from{opacity:0}to{opacity:1}}
+
+/* Loading text */
+.intro-text{
+  margin-top:36px;
+  font-family:var(--mono);font-size:.65rem;
+  letter-spacing:4px;color:var(--dim);
+  text-transform:uppercase;
+  animation:introFadeIn 1s .4s both;
+}
+.intro-text span{
+  color:var(--accent);
+  animation:introBlink 1s .8s infinite;
+}
+@keyframes introBlink{0%,100%{opacity:1}50%{opacity:0}}
+
+/* Scan line effect */
+.intro-scan{
+  position:absolute;
+  left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,rgba(0,255,179,0.4),transparent);
+  animation:introScanMove 1.8s ease-in-out forwards;
+  top:0;
+}
+@keyframes introScanMove{
+  0%{top:0%;opacity:0;}
+  10%{opacity:1;}
+  100%{top:100%;opacity:0.3;}
+}
 @keyframes logoEntry{
   0%{opacity:0;transform:translateX(-30px) scale(0.8);filter:drop-shadow(0 0 0px rgba(0,255,179,0));}
   60%{opacity:1;transform:translateX(4px) scale(1.08);filter:drop-shadow(0 0 18px rgba(0,255,179,0.7));}
@@ -551,7 +672,7 @@ section{position:relative;z-index:1;padding:100px 80px;}
   100%{opacity:1;transform:translateX(0) scale(1);filter:drop-shadow(0 0 8px rgba(0,255,179,0.35));}
 }
 .logo-img{
-  animation:logoEntry 1s cubic-bezier(0.23,1,0.32,1) both;
+  animation:logoEntry 1s cubic-bezier(0.23,1,0.32,1) 2.4s both;
 }
 
 /* ════════ PROJECT LINKS FIX ════════ */
@@ -848,6 +969,19 @@ footer{
 </head>
 <body>
 
+<!-- ══════════ INTRO LOADER ══════════ -->
+<div id="intro-loader">
+  <div class="intro-grid"></div>
+  <div class="intro-scan"></div>
+  <div class="intro-logo-wrap">
+    <div class="intro-glow-burst"></div>
+    <div class="intro-ring"></div>
+    <div class="intro-ring-2"></div>
+    <img src="logoat.png" alt="Ayush Sharma" class="intro-logo" onerror="this.src='logo.png'">
+  </div>
+  <p class="intro-text">LOADING<span>_</span></p>
+</div>
+
 <!-- Scroll Progress -->
 <div id="sp"></div>
 
@@ -859,7 +993,7 @@ footer{
 <!-- NAV -->
 <nav id="nb">
   <a href="#hero" class="logo">
-    <img src="logo.png" alt="Ayush Sharma Logo" class="logo-img">
+    <img src="logo.png" alt="Hackwithas Logo" class="logo-img">
   </a>
   <ul class="nav-ul">
     <li><a href="#about">About</a></li>
@@ -1188,7 +1322,7 @@ target="_blank" rel="noopener" class="pbtn r">Site</a>
           <span class="tech-t">OOP</span><span class="tech-t">CLI</span>
         </div>
         <div class="proj-links">
-          <a href="https://github.com/Hackwithas/EPMS-PYTHON" target="_blank" rel="noopener" class="pbtn r"><i class="fab fa-github"></i> Repo</a>
+          <a href="https://github.com/Hackwithas" target="_blank" rel="noopener" class="pbtn r"><i class="fab fa-github"></i> Repo</a>
         </div>
       </div>
 
@@ -1201,7 +1335,7 @@ target="_blank" rel="noopener" class="pbtn r">Site</a>
           <span class="tech-t">APIs</span><span class="tech-t">Web Scraping</span>
         </div>
         <div class="proj-links">
-          <a href="https://github.com/Hackwithas/AI-Research-Travel-Agent" target="_blank" rel="noopener" class="pbtn r"><i class="fab fa-github"></i> Repo</a>
+          <a href="https://github.com/Hackwithas" target="_blank" rel="noopener" class="pbtn r"><i class="fab fa-github"></i> Repo</a>
         </div>
       </div>
 
@@ -1214,7 +1348,7 @@ target="_blank" rel="noopener" class="pbtn r">Site</a>
           <span class="tech-t">JavaScript</span><span class="tech-t">Responsive</span>
         </div>
         <div class="proj-links">
-          <a href="https://github.com/Hackwithas/Frontend-Development" target="_blank" rel="noopener" class="pbtn r"><i class="fab fa-github"></i> Repo</a>
+          <a href="https://github.com/Hackwithas" target="_blank" rel="noopener" class="pbtn r"><i class="fab fa-github"></i> Repo</a>
         </div>
       </div>
 
@@ -1423,6 +1557,17 @@ target="_blank" rel="noopener" class="pbtn r">Site</a>
 </footer>
 
 <script>
+/* ─── Intro Loader ─── */
+(function(){
+  const loader = document.getElementById('intro-loader');
+  // Hide after 2.2s — enough for zoom + ring spin to feel premium
+  setTimeout(()=>{
+    loader.classList.add('hide');
+    // Remove from DOM after transition
+    setTimeout(()=>{ loader.style.display='none'; }, 700);
+  }, 2200);
+})();
+
 /* ─── Scroll Progress ─── */
 window.addEventListener('scroll',()=>{
   const st=window.scrollY,dh=document.documentElement.scrollHeight-window.innerHeight;
