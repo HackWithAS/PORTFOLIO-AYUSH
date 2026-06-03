@@ -4,17 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ayush Sharma | Cybersecurity & Web Developer</title>
-<meta name="description" content="Ayush Sharma - Cybersecurity Enthusiast, Web Developer, and Secure Development Learner.">
-<meta name="keywords" content="Ayush Sharma, Cybersecurity, Web Developer, Ethical Hacking, Portfolio">
+<meta name="description" content="Ayush Sharma — Cybersecurity Enthusiast, Web Developer, Ethical Hacker in Training. B.Tech CSE @ Invertis University.">
+<meta name="keywords" content="Ayush Sharma, Cybersecurity, Web Developer, Ethical Hacking, Portfolio, hackwithas">
 <meta name="author" content="Ayush Sharma">
 <meta property="og:title" content="Ayush Sharma | Cybersecurity & Web Developer">
 <meta property="og:description" content="Building Secure Digital Experiences with Code & Security Mindset">
 <meta property="og:type" content="website">
 <link rel="icon" href="logo.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,300;0,400;0,700;1,400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,300;0,400;0,700;1,400&family=Bebas+Neue&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="sytle.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -22,27 +22,34 @@
 <div id="intro-loader">
   <div class="intro-grid"></div>
   <div class="intro-scan"></div>
-  <div class="intro-logo-wrap">
-    <div class="intro-glow-burst"></div>
-    <div class="intro-ring"></div>
-    <div class="intro-ring-2"></div>
-    <img src="logoat.png" alt="Ayush Sharma" class="intro-logo" onerror="this.src='logo.png'">
+  <div class="intro-content">
+    <div class="intro-logo-wrap">
+      <div class="intro-orbit"></div>
+      <div class="intro-orbit-2"></div>
+      <div class="intro-core">
+        <img src="logoat.png" alt="AS" class="intro-logo" onerror="this.src='logo.png'">
+      </div>
+    </div>
+    <div class="intro-info">
+      <p class="intro-name">AYUSH SHARMA</p>
+      <p class="intro-sub">INITIALIZING PORTFOLIO<span class="intro-dots"><span>.</span><span>.</span><span>.</span></span></p>
+    </div>
   </div>
-  <p class="intro-text">LOADING<span>_</span></p>
 </div>
 
-<!-- Scroll Progress -->
+<!-- Scroll Progress Bar -->
 <div id="sp"></div>
 
-<!-- Back to Top -->
+<!-- Back To Top -->
 <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
-  <i class="fas fa-chevron-up"></i>
+  <i class="fas fa-arrow-up"></i>
 </button>
 
-<!-- NAV -->
+<!-- ══════════ NAV ══════════ -->
 <nav id="nb">
-  <a href="#hero" class="logo">
-    <img src="logo.png" alt="Ayush Sharma Logo" class="logo-img">
+  <a href="#hero" class="nav-logo">
+    <img src="logo.png" alt="Ayush Sharma" class="logo-img" onerror="this.style.display='none'">
+    <span class="logo-text">AS<span class="logo-dot">.</span></span>
   </a>
   <ul class="nav-ul">
     <li><a href="#about">About</a></li>
@@ -51,166 +58,206 @@
     <li><a href="#certifications">Certs</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="mailto:ayushssharmaa@gmail.com?subject=Hiring%20Inquiry" class="nav-hire">HIRE ME</a>
-  <button class="hbg" id="hbg" aria-label="Menu">
+  <a href="mailto:ayushssharmaa@gmail.com?subject=Hiring%20Inquiry" class="nav-cta">
+    <span>HIRE ME</span>
+    <i class="fas fa-arrow-right"></i>
+  </a>
+  <button class="hbg" id="hbg" aria-label="Toggle Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
 <!-- Mobile Nav -->
 <div class="mob-nav" id="mob">
-  <a href="#about" onclick="closeM()">ABOUT</a>
-  <a href="#skills" onclick="closeM()">SKILLS</a>
-  <a href="#projects" onclick="closeM()">PROJECTS</a>
-  <a href="#certifications" onclick="closeM()">CERTS</a>
-  <a href="#contact" onclick="closeM()">CONTACT</a>
-  <a href="mailto:ayushssharmaa@gmail.com?subject=Hiring%20Inquiry" onclick="closeM()" style="color:var(--accent)">HIRE ME</a>
+  <div class="mob-inner">
+    <a href="#about" onclick="closeM()"><span class="mn-num">01</span>About</a>
+    <a href="#skills" onclick="closeM()"><span class="mn-num">02</span>Skills</a>
+    <a href="#projects" onclick="closeM()"><span class="mn-num">03</span>Projects</a>
+    <a href="#certifications" onclick="closeM()"><span class="mn-num">04</span>Certs</a>
+    <a href="#contact" onclick="closeM()"><span class="mn-num">05</span>Contact</a>
+    <a href="mailto:ayushssharmaa@gmail.com" onclick="closeM()" class="mob-hire">HIRE ME →</a>
+  </div>
 </div>
 
 <!-- ══════════ HERO ══════════ -->
 <section id="hero">
-  <div class="hero-grid"></div>
-  <div class="hero-slash"></div>
+  <div class="hero-bg-grid"></div>
+  <div class="hero-bg-glow"></div>
 
-  <!-- Left -->
-  <div class="hero-left">
-    <div class="hero-chip">
-      <span class="chip-dot"></span>
-      OPEN TO INTERNSHIP &amp; OPPORTUNITIES
-    </div>
-    <h1 class="hero-name">
-      AYUSH
-      <span class="hl">SHARMA</span>
-    </h1>
-    <div class="hero-role">
-      <span style="color:var(--dim)">~$ </span><span id="ty"></span><span class="cur"></span>
-    </div>
-    <p class="hero-desc">
-      Building <strong>secure digital experiences</strong> at the intersection of
-      offensive security and modern web development.
-      Currently studying <strong>B.Tech CSE</strong> @ Invertis University.
-    </p>
-    <div class="hero-btns">
-      <a href="https://drive.google.com/file/d/1-R3j0c5BKZJ0tUFRVJk5WOGKL0hD4aCI/view?usp=sharing" target="_blank" rel="noopener" class="btn-a btn-solid">
-        <i class="fas fa-file-alt"></i> VIEW RESUME
-      </a>
-      <a href="https://github.com/Hackwithas" target="_blank" rel="noopener" class="btn-a btn-ghost">
-        <i class="fab fa-github"></i> GITHUB
-      </a>
-      <a href="#contact" class="btn-a btn-ghost">
-        <i class="fas fa-terminal"></i> CONTACT
-      </a>
+  <div class="hero-inner">
+    <!-- LEFT CONTENT -->
+    <div class="hero-left">
+      <div class="hero-status">
+        <span class="status-pulse"></span>
+        <span>OPEN TO INTERNSHIP &amp; OPPORTUNITIES</span>
+      </div>
+
+      <h1 class="hero-name">
+        <span class="name-line">AYUSH</span>
+        <span class="name-line outline">SHARMA</span>
+      </h1>
+
+      <div class="hero-role-line">
+        <span class="prompt-sym">~/</span>
+        <span id="ty" class="typed-text"></span>
+        <span class="cursor-blink"></span>
+      </div>
+
+      <p class="hero-desc">
+        Bridging the gap between <strong>offensive security</strong> and modern web development.
+        I build things that look great and <strong>resist real-world threats</strong>.
+      </p>
+
+      <div class="hero-actions">
+        <a href="https://drive.google.com/file/d/1-R3j0c5BKZJ0tUFRVJk5WOGKL0hD4aCI/view?usp=sharing" target="_blank" rel="noopener" class="btn-primary">
+          <i class="fas fa-file-alt"></i> VIEW RESUME
+        </a>
+        <a href="https://github.com/Hackwithas" target="_blank" rel="noopener" class="btn-outline">
+          <i class="fab fa-github"></i> GITHUB
+        </a>
+        <a href="#contact" class="btn-outline">
+          <i class="fas fa-terminal"></i> CONTACT
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="sn" data-t="8">0</span>
+          <span class="sl">Projects</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <span class="sn" data-t="5">0</span>
+          <span class="sl">Certs</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <span class="sn" data-t="8">0</span>
+          <span class="sl">CGPA</span>
+        </div>
+        <div class="stat-sep"></div>
+        <div class="stat">
+          <span class="sn" data-t="2028">0</span>
+          <span class="sl">Graduating</span>
+        </div>
+      </div>
     </div>
 
-    <div class="hero-stats">
-      <div class="stat-item">
-        <div class="sn" data-t="8">0</div>
-        <div class="sl">Projects</div>
+    <!-- RIGHT — Terminal -->
+    <div class="hero-right">
+      <div class="terminal">
+        <div class="term-titlebar">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="term-title-txt">ayush@hackwithas:~</span>
+          <span class="term-badge">bash</span>
+        </div>
+        <div class="term-body">
+          <div class="tl"><span class="tp">ayush@hackwithas<span class="tc">:~$</span></span> <span class="tc">whoami</span></div>
+          <div class="tl out">Ayush Sharma — CSE Student | Cybersecurity Enthusiast</div>
+          <div class="tl mt"><span class="tp">ayush@hackwithas<span class="tc">:~$</span></span> <span class="tc">cat skills.txt</span></div>
+          <div class="tl out"><span class="arr">→</span> Web Dev · Ethical Hacking · Python · React</div>
+          <div class="tl out"><span class="arr">→</span> Secure Development · Linux · Git</div>
+          <div class="tl mt"><span class="tp">ayush@hackwithas<span class="tc">:~$</span></span> <span class="tc">echo $STATUS</span></div>
+          <div class="tl out"><span class="hi">OPEN_TO_WORK=true</span> &nbsp;|&nbsp; <span class="dim">LEARNING=always</span></div>
+          <div class="tl mt"><span class="tp">ayush@hackwithas<span class="tc">:~$</span></span> <span class="tc">ls certifications/</span></div>
+          <div class="tl out">TCS_iON &nbsp; EduSkills_AIML &nbsp; IBM_Cloud</div>
+          <div class="tl out">Deloitte_Forage &nbsp; Google_GenAI &nbsp; EthicalHacking</div>
+          <div class="tl mt"><span class="tp">ayush@hackwithas<span class="tc">:~$</span></span> <span class="tc">ping hackwithas.dev</span></div>
+          <div class="tl out"><span class="hi">64 bytes from 0.0.0.0: icmp_seq=1 ttl=64</span></div>
+          <div class="tl blink-line"><span class="tp">ayush@hackwithas<span class="tc">:~$</span></span> <span class="tc dimcur">_</span></div>
+        </div>
       </div>
-      <div class="stat-item">
-        <div class="sn" data-t="4">0</div>
-        <div class="sl">Certifications</div>
-      </div>
-      <div class="stat-item">
-        <div class="sn" data-t="8">0</div>
-        <div class="sl">CGPA</div>
-      </div>
-      <div class="stat-item">
-        <div class="sn" data-t="2028">0</div>
-        <div class="sl">Graduating</div>
-      </div>
+      <!-- Floating badges -->
+      <div class="float-badge fb1"><i class="fas fa-shield-alt"></i> Security</div>
+      <div class="float-badge fb2"><i class="fas fa-code"></i> Full Stack</div>
+      <div class="float-badge fb3"><i class="fas fa-graduation-cap"></i> B.Tech CSE</div>
     </div>
   </div>
 
-  <!-- Right — Terminal -->
-  <div class="hero-right">
-    <div class="term">
-      <div class="term-bar">
-        <span class="td" style="background:#ff5f57"></span>
-        <span class="td" style="background:#febc2e"></span>
-        <span class="td" style="background:#28c840"></span>
-        <span class="term-title">ayush@hackwithas:~</span>
-      </div>
-      <div class="term-body">
-        <div class="tl"><span class="tp">ayush@hackwithas:~$</span> <span class="tc">whoami</span></div>
-        <div class="tl"><span class="to">Ayush Sharma — CSE Student | Cybersecurity Enthusiast</span></div>
-        <div class="tl" style="margin-top:8px"><span class="tp">ayush@hackwithas:~$</span> <span class="tc">cat skills.txt</span></div>
-        <div class="tl"><span class="th">→</span> <span class="to">Web Dev · Ethical Hacking · Python · React · Secure Dev</span></div>
-        <div class="tl" style="margin-top:8px"><span class="tp">ayush@hackwithas:~$</span> <span class="tc">echo $STATUS</span></div>
-        <div class="tl"><span class="tc">▶ OPEN_TO_WORK=true</span> <span class="th">| LEARNING=always</span></div>
-        <div class="tl" style="margin-top:8px"><span class="tp">ayush@hackwithas:~$</span> <span class="tc">ls certs/</span></div>
-        <div class="tl"><span class="to">Google_AI_ML &nbsp; Deloitte &nbsp; Infosys &nbsp; LinkedIn</span></div>
-        <div class="tl" style="margin-top:8px"><span class="tp">ayush@hackwithas:~$</span> <span class="tc" style="color:var(--dim)">_</span></div>
-      </div>
-    </div>
+  <!-- Scroll hint -->
+  <div class="scroll-hint">
+    <span class="scroll-line"></span>
+    <span class="scroll-lbl">SCROLL</span>
   </div>
 </section>
 
 <!-- ══════════ ABOUT ══════════ -->
 <section id="about">
   <div class="si">
-    <div class="stag">01 — About</div>
-    <h2 class="stitle">WHO AM <span>I?</span></h2>
-    <div class="sline"></div>
+    <div class="sec-tag"><span>//</span> 01 — ABOUT</div>
+    <h2 class="sec-title">WHO AM <span class="outline-text">I?</span></h2>
+    <div class="sec-line"></div>
 
-    <div class="about-wrap">
-      <!-- Avatar -->
-      <div class="av-block rv">
-        <div class="av-frame">
-          <div class="c tl"></div><div class="c tr"></div>
-          <div class="c bl"></div><div class="c br"></div>
-          <div class="av-inner"><img src="logo.png" alt="Ayush Sharma" style="width:160px;height:160px;object-fit:contain;filter:drop-shadow(0 0 20px rgba(0,255,179,.35));border-radius:4px;"></div>
+    <div class="about-grid">
+      <!-- Avatar card -->
+      <div class="about-avatar rv">
+        <div class="av-card">
+          <div class="av-corner tl"></div>
+          <div class="av-corner tr"></div>
+          <div class="av-corner bl"></div>
+          <div class="av-corner br"></div>
+          <div class="av-ring"></div>
+          <div class="av-img-wrap">
+            <img src="logo.png" alt="Ayush Sharma" class="av-img">
+          </div>
+          <div class="av-overlay">
+            <span>AYUSH SHARMA</span>
+          </div>
         </div>
         <div class="av-chips">
-          <span class="a-chip">B.Tech CSE</span>
-          <span class="a-chip p">Cybersecurity</span>
-          <span class="a-chip">Web Dev</span>
-          <span class="a-chip p">Open to Work</span>
+          <span class="chip">B.Tech CSE</span>
+          <span class="chip accent2">Cybersecurity</span>
+          <span class="chip">Web Dev</span>
+          <span class="chip accent2">Open to Work</span>
         </div>
       </div>
 
-      <!-- Text -->
-      <div class="about-body rv">
-        <p>I'm a <strong>B.Tech CSE student at Invertis University</strong> with a dual passion for cybersecurity and full-stack web development. I build secure digital products while continuously learning ethical hacking and modern development practices.</p>
-        <p>My approach bridges the gap between development and security — writing code that not only works but <strong>withstands real-world threats</strong>. I believe every developer should think like a hacker.</p>
+      <!-- Bio -->
+      <div class="about-text rv">
+        <p>I'm a <strong>B.Tech CSE student at Invertis University</strong> with a dual passion for cybersecurity and full-stack web development. I craft secure digital products while continuously sharpening my skills in ethical hacking and modern development practices.</p>
+        <p>My approach bridges development and security — writing code that not only works but <strong>withstands real-world threats</strong>. Every developer should think like a hacker.</p>
 
-        <div class="info-g">
-          <div class="ig"><div class="lbl">University</div><div class="val">Invertis University</div></div>
-          <div class="ig"><div class="lbl">Degree</div><div class="val">B.Tech CSE</div></div>
-          <div class="ig"><div class="lbl">CGPA</div><div class="val">8.0+</div></div>
-          <div class="ig"><div class="lbl">Graduation</div><div class="val">2028</div></div>
-          <div class="ig"><div class="lbl">Focus</div><div class="val">CyberSec + WebDev</div></div>
-          <div class="ig"><div class="lbl">Status</div><div class="val" style="color:#00ff88">🟢 Open to Work</div></div>
+        <div class="info-grid">
+          <div class="info-item"><div class="info-label">University</div><div class="info-val">Invertis University</div></div>
+          <div class="info-item"><div class="info-label">Degree</div><div class="info-val">B.Tech CSE</div></div>
+          <div class="info-item"><div class="info-label">CGPA</div><div class="info-val">8.0+</div></div>
+          <div class="info-item"><div class="info-label">Graduation</div><div class="info-val">2028</div></div>
+          <div class="info-item"><div class="info-label">Focus</div><div class="info-val">CyberSec + WebDev</div></div>
+          <div class="info-item"><div class="info-label">Status</div><div class="info-val open">🟢 Open to Work</div></div>
         </div>
 
-        <div style="display:flex;gap:10px;flex-wrap:wrap;">
-          <a href="https://www.linkedin.com/in/hackwithas/" target="_blank" rel="noopener" class="btn-a btn-ghost" style="font-size:.7rem;padding:9px 18px;clip-path:none;border-radius:2px;">
-            <i class="fab fa-linkedin"></i> LINKEDIN
+        <div class="about-links">
+          <a href="https://www.linkedin.com/in/hackwithas/" target="_blank" rel="noopener" class="btn-sm">
+            <i class="fab fa-linkedin"></i> LinkedIn
           </a>
-          <a href="https://github.com/Hackwithas" target="_blank" rel="noopener" class="btn-a btn-ghost" style="font-size:.7rem;padding:9px 18px;clip-path:none;border-radius:2px;">
-            <i class="fab fa-github"></i> GITHUB
+          <a href="https://github.com/Hackwithas" target="_blank" rel="noopener" class="btn-sm">
+            <i class="fab fa-github"></i> GitHub
           </a>
-          <a href="https://portfolio-hackwithas.vercel.app/" target="_blank" rel="noopener" class="btn-a btn-ghost" style="font-size:.7rem;padding:9px 18px;clip-path:none;border-radius:2px;border-color:rgba(123,94,167,.35);color:#b06fff;">
-            <i class="fas fa-external-link-alt"></i> PORTFOLIO
+          <a href="https://portfolio-hackwithas.vercel.app/" target="_blank" rel="noopener" class="btn-sm accent2-btn">
+            <i class="fas fa-external-link-alt"></i> Portfolio
           </a>
         </div>
       </div>
     </div>
 
     <!-- Education -->
-    <div class="edu">
-      <div class="stag">Education</div>
-      <h3 class="stitle" style="font-size:clamp(1.4rem,3vw,2rem)">ACADEMIC <span>JOURNEY</span></h3>
-      <div class="sline"></div>
-      <div class="edu-card rv">
-        <h3>B.Tech — Computer Science &amp; Engineering</h3>
-        <p class="inst">Invertis University, Bareilly, Uttar Pradesh</p>
-        <div class="edu-badges">
-          <span class="eb">CGPA: 8.0+</span>
-          <span class="eb p">2024 – 2028</span>
-          <span class="eb">CSE Stream</span>
-          <span class="eb p">Cybersecurity Focus</span>
+    <div class="edu-section rv">
+      <div class="sec-tag small"><span>//</span> Education</div>
+      <div class="edu-card">
+        <div class="edu-icon"><i class="fas fa-university"></i></div>
+        <div class="edu-body">
+          <h3>B.Tech — Computer Science &amp; Engineering</h3>
+          <p class="edu-inst"><i class="fas fa-map-marker-alt"></i> Invertis University, Bareilly, Uttar Pradesh</p>
+          <div class="edu-tags">
+            <span class="etag">CGPA: 8.0+</span>
+            <span class="etag alt">2024 – 2028</span>
+            <span class="etag">CSE Stream</span>
+            <span class="etag alt">Cybersecurity Focus</span>
+          </div>
         </div>
+        <div class="edu-year">2028</div>
       </div>
     </div>
   </div>
@@ -219,188 +266,298 @@
 <!-- ══════════ SKILLS ══════════ -->
 <section id="skills">
   <div class="si">
-    <div class="stag">02 — Skills</div>
-    <h2 class="stitle">TECH <span>ARSENAL</span></h2>
-    <div class="sline"></div>
-    <div class="skills-g">
-      <div class="sk-cat rv">
-        <div class="sk-head"><i class="fas fa-code"></i> Frontend</div>
-        <div class="sk-tags">
-          <span class="sk-tag">HTML5</span>
-          <span class="sk-tag">CSS3</span>
-          <span class="sk-tag">JavaScript</span>
-          <span class="sk-tag">React</span>
+    <div class="sec-tag"><span>//</span> 02 — SKILLS</div>
+    <h2 class="sec-title">TECH <span class="outline-text">ARSENAL</span></h2>
+    <div class="sec-line"></div>
+
+    <div class="skills-grid">
+
+      <div class="skill-category rv">
+        <div class="sc-header">
+          <span class="sc-icon"><i class="fas fa-code"></i></span>
+          <span class="sc-title">Frontend</span>
+        </div>
+        <div class="sc-tags">
+          <span class="stag-item">HTML5</span>
+          <span class="stag-item">CSS3</span>
+          <span class="stag-item">JavaScript</span>
+          <span class="stag-item">React</span>
+          <span class="stag-item">Responsive Design</span>
         </div>
       </div>
-      <div class="sk-cat rv">
-        <div class="sk-head"><i class="fas fa-terminal"></i> Programming</div>
-        <div class="sk-tags">
-          <span class="sk-tag">Python</span>
-          <span class="sk-tag">C</span>
-          <span class="sk-tag">Java</span>
+
+      <div class="skill-category rv">
+        <div class="sc-header">
+          <span class="sc-icon"><i class="fas fa-terminal"></i></span>
+          <span class="sc-title">Programming</span>
+        </div>
+        <div class="sc-tags">
+          <span class="stag-item">Python</span>
+          <span class="stag-item">C</span>
+          <span class="stag-item">Java</span>
+          <span class="stag-item">C++</span>
+          <span class="stag-item">OOP</span>
         </div>
       </div>
-      <div class="sk-cat rv">
-        <div class="sk-head"><i class="fas fa-tools"></i> Tools &amp; OS</div>
-        <div class="sk-tags">
-          <span class="sk-tag">Git</span>
-          <span class="sk-tag">GitHub</span>
-          <span class="sk-tag">Linux</span>
-          <span class="sk-tag">VS Code</span>
+
+      <div class="skill-category rv">
+        <div class="sc-header">
+          <span class="sc-icon"><i class="fas fa-tools"></i></span>
+          <span class="sc-title">Tools &amp; OS</span>
+        </div>
+        <div class="sc-tags">
+          <span class="stag-item">Git</span>
+          <span class="stag-item">GitHub</span>
+          <span class="stag-item">Linux</span>
+          <span class="stag-item">VS Code</span>
+          <span class="stag-item">Vercel</span>
         </div>
       </div>
-      <div class="sk-cat rv" style="border-color:rgba(123,94,167,.18)">
-        <div class="sk-head" style="color:#b06fff"><i class="fas fa-shield-alt"></i> Cybersecurity</div>
-        <div class="sk-tags">
-          <span class="sk-tag" style="border-color:rgba(123,94,167,.2);color:#b06fff">Ethical Hacking</span>
-          <span class="sk-tag" style="border-color:rgba(123,94,167,.2);color:#b06fff">Offensive Security</span>
-          <span class="sk-tag" style="border-color:rgba(123,94,167,.2);color:#b06fff">Secure Development</span>
-          <span class="sk-tag" style="border-color:rgba(123,94,167,.2);color:#b06fff">Basic Networking</span>
+
+      <div class="skill-category cyber rv">
+        <div class="sc-header">
+          <span class="sc-icon cyber"><i class="fas fa-shield-alt"></i></span>
+          <span class="sc-title cyber">Cybersecurity</span>
         </div>
+        <div class="sc-tags">
+          <span class="stag-item cyber">Ethical Hacking</span>
+          <span class="stag-item cyber">Offensive Security</span>
+          <span class="stag-item cyber">Secure Development</span>
+          <span class="stag-item cyber">Basic Networking</span>
+          <span class="stag-item cyber">Pen Testing</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Skill bars -->
+    <div class="skill-bars rv">
+      <div class="sb-title">Proficiency Overview</div>
+      <div class="sb-row">
+        <span class="sb-label">Web Development</span>
+        <div class="sb-track"><div class="sb-fill" data-w="85"></div></div>
+        <span class="sb-pct">85%</span>
+      </div>
+      <div class="sb-row">
+        <span class="sb-label">Python</span>
+        <div class="sb-track"><div class="sb-fill" data-w="78"></div></div>
+        <span class="sb-pct">78%</span>
+      </div>
+      <div class="sb-row">
+        <span class="sb-label">Cybersecurity</span>
+        <div class="sb-track"><div class="sb-fill cyber-fill" data-w="70"></div></div>
+        <span class="sb-pct">70%</span>
+      </div>
+      <div class="sb-row">
+        <span class="sb-label">IoT / Arduino</span>
+        <div class="sb-track"><div class="sb-fill" data-w="65"></div></div>
+        <span class="sb-pct">65%</span>
       </div>
     </div>
+
   </div>
 </section>
 
 <!-- ══════════ PROJECTS ══════════ -->
 <section id="projects">
   <div class="si">
-    <div class="stag">03 — Projects</div>
-    <h2 class="stitle">FEATURED <span>WORK</span></h2>
-    <div class="sline"></div>
-    <div class="proj-g">
+    <div class="sec-tag"><span>//</span> 03 — PROJECTS</div>
+    <h2 class="sec-title">FEATURED <span class="outline-text">WORK</span></h2>
+    <div class="sec-line"></div>
 
-      <!-- Web Projects divider -->
-      <div class="div-row" style="grid-column:1/-1">
-        <span style="color:var(--accent)">// Web Projects</span>
-        <span class="line" style="background:linear-gradient(90deg,rgba(0,255,179,.35),transparent)"></span>
-      </div>
+    <!-- Category filter tabs -->
+    <div class="proj-tabs">
+      <button class="ptab active" data-filter="all">ALL</button>
+      <button class="ptab" data-filter="web">WEB</button>
+      <button class="ptab" data-filter="iot">IoT</button>
+      <button class="ptab" data-filter="ai">AI/ML</button>
+    </div>
 
-      <div class="proj-card rv">
-        <div class="proj-top"><span class="proj-icon">🏗️</span><span class="proj-n">01</span></div>
-        <h3 class="proj-title">PS Construction Worker Management System</h3>
-        <p class="proj-desc">Full-stack construction worker management platform. Includes worker registration, project assignment, and admin dashboard with secure role-based access.</p>
-        <div class="proj-tech">
-          <span class="tech-t">HTML</span><span class="tech-t">CSS</span>
-          <span class="tech-t">JavaScript</span><span class="tech-t">Web Dev</span>
-        </div>
-        <div class="proj-links">
-   <a href="https://psconstructiongurugram.vercel.app" 
-target="_blank" rel="noopener" class="pbtn r">Site</a>
-        </div>
-  
-      </div>
+    <div class="proj-grid">
 
-      <div class="proj-card rv">
-        <div class="proj-top"><span class="proj-icon">🌐</span><span class="proj-n">02</span></div>
-        <h3 class="proj-title">Personal Portfolio Website</h3>
-        <p class="proj-desc">Modern, responsive portfolio showcasing projects, skills and certifications. Built with focus on clean UI/UX and deployed on Vercel.</p>
-        <div class="proj-tech">
-          <span class="tech-t">HTML</span><span class="tech-t">CSS</span>
-          <span class="tech-t">JavaScript</span><span class="tech-t">Vercel</span>
+      <!-- WEB 01 -->
+      <div class="proj-card rv" data-cat="web">
+        <div class="pc-top">
+          <span class="pc-emoji">🏗️</span>
+          <div class="pc-num">01</div>
+          <div class="pc-links">
+            <a href="https://psconstructiongurugram.vercel.app" target="_blank" rel="noopener" class="pc-link" title="Live Site"><i class="fas fa-external-link-alt"></i></a>
+          </div>
         </div>
-        <div class="proj-links">
-          <a href="https://github.com/Hackwithas" target="_blank" rel="noopener" class="pbtn r"><i class="fab fa-github"></i> Repo</a>
-          <a href="https://portfolio-hackwithas.vercel.app/" target="_blank" rel="noopener" class="pbtn d"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+        <div class="pc-cat-tag web">Web</div>
+        <h3 class="pc-title">PS Construction Worker Management System</h3>
+        <p class="pc-desc">Full-stack construction worker management platform with worker registration, project assignment, and secure admin dashboard with role-based access control.</p>
+        <div class="pc-tech">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Web Dev</span>
+        </div>
+        <div class="pc-footer">
+          <a href="https://psconstructiongurugram.vercel.app" target="_blank" rel="noopener" class="pc-btn">
+            Live Site <i class="fas fa-arrow-right"></i>
+          </a>
         </div>
       </div>
 
-      <!-- IIoT divider -->
-      <div class="div-row" style="grid-column:1/-1;margin-top:16px">
-        <span style="color:var(--accent3)">// Industrial IoT Projects</span>
-        <span class="line" style="background:linear-gradient(90deg,rgba(255,79,94,.35),transparent)"></span>
-        <span style="background:rgba(255,79,94,.08);border:1px solid rgba(255,79,94,.25);color:#ff7d88;padding:3px 11px;font-family:var(--mono);font-size:.62rem;letter-spacing:1px;border-radius:2px;white-space:nowrap"><i class="fas fa-crown"></i> Team Lead — All 3</span>
-      </div>
-
-      <div class="proj-card rv" style="border-color:rgba(255,79,94,.16)">
-        <div class="proj-top"><span class="proj-icon">💡</span><span class="proj-n" style="color:rgba(255,79,94,.1)">03</span></div>
-        <h3 class="proj-title">Smart Street Light System</h3>
-        <div class="proj-lead"><i class="fas fa-crown"></i> Team Lead &nbsp;|&nbsp; <i class="fas fa-industry"></i> IIoT</div>
-        <p class="proj-desc">IoT-based automated street lighting using LDR and motion sensors to auto-manage lighting intensity, reducing energy waste.</p>
-        <div class="proj-tech">
-          <span class="tech-t">IoT</span><span class="tech-t">Arduino</span>
-          <span class="tech-t">LDR Sensor</span><span class="tech-t">C++</span>
+      <!-- WEB 02 -->
+      <div class="proj-card rv" data-cat="web">
+        <div class="pc-top">
+          <span class="pc-emoji">🌐</span>
+          <div class="pc-num">02</div>
+          <div class="pc-links">
+            <a href="https://portfolio-hackwithas.vercel.app/" target="_blank" rel="noopener" class="pc-link" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+          </div>
         </div>
-        <div class="proj-links">
-          <span class="pbtn nl" style="border-color:rgba(255,79,94,.18);color:#ff7d88"><i class="fas fa-microchip"></i> Hardware / IIoT</span>
+        <div class="pc-cat-tag web">Web</div>
+        <h3 class="pc-title">Personal Portfolio Website</h3>
+        <p class="pc-desc">Modern, responsive portfolio showcasing projects, skills and certifications. Built with focus on clean UI/UX, cybersecurity aesthetic, and deployed on Vercel.</p>
+        <div class="pc-tech">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Vercel</span>
         </div>
-      </div>
-
-      <div class="proj-card rv" style="border-color:rgba(255,79,94,.16)">
-        <div class="proj-top"><span class="proj-icon">⚙️</span><span class="proj-n" style="color:rgba(255,79,94,.1)">04</span></div>
-        <h3 class="proj-title">RPM Monitoring System <span style="font-size:.72rem;color:#ff7d88;font-family:var(--mono)">(IIOT-4)</span></h3>
-        <div class="proj-lead"><i class="fas fa-crown"></i> Team Lead &nbsp;|&nbsp; <i class="fas fa-industry"></i> IIoT</div>
-        <p class="proj-desc">Industrial RPM monitoring for real-time machinery tracking. Enables proactive maintenance by continuously logging rotational speed data.</p>
-        <div class="proj-tech">
-          <span class="tech-t">IIoT</span><span class="tech-t">RPM Sensor</span>
-          <span class="tech-t">Arduino</span><span class="tech-t">Real-time</span>
-        </div>
-        <div class="proj-links">
-          <a href="https://github.com/Hackwithas/RPM-IIOT-4" target="_blank" rel="noopener" class="pbtn r"><i class="fab fa-github"></i> Repo</a>
-          <span class="pbtn nl" style="border-color:rgba(255,79,94,.18);color:#ff7d88"><i class="fas fa-tachometer-alt"></i> Hardware / IIoT</span>
+        <div class="pc-footer">
+          <a href="https://portfolio-hackwithas.vercel.app/" target="_blank" rel="noopener" class="pc-btn">
+            Live Demo <i class="fas fa-arrow-right"></i>
+          </a>
         </div>
       </div>
 
-      <div class="proj-card rv" style="border-color:rgba(255,79,94,.16)">
-        <div class="proj-top"><span class="proj-icon">🏭</span><span class="proj-n" style="color:rgba(255,79,94,.1)">05</span></div>
-        <h3 class="proj-title">CCFRA Automation System <span style="font-size:.72rem;color:#ff7d88;font-family:var(--mono)">(IIOT-3)</span></h3>
-        <div class="proj-lead"><i class="fas fa-crown"></i> Team Lead &nbsp;|&nbsp; <i class="fas fa-industry"></i> IIoT</div>
-        <p class="proj-desc">IIoT-based automation and control system for industrial process monitoring with real-time feedback and data-driven decision-making.</p>
-        <div class="proj-tech">
-          <span class="tech-t">IIoT</span><span class="tech-t">Automation</span>
-          <span class="tech-t">Process Control</span><span class="tech-t">Industrial</span>
+      <!-- IoT 03 -->
+      <div class="proj-card rv featured" data-cat="iot">
+        <div class="feat-ribbon">TEAM LEAD</div>
+        <div class="pc-top">
+          <span class="pc-emoji">💡</span>
+          <div class="pc-num iot">03</div>
+          <div class="pc-links">
+            <span class="pc-link-na"><i class="fas fa-microchip"></i></span>
+          </div>
         </div>
-        <div class="proj-links">
-          <a href="https://github.com/Hackwithas/CCFRA-IIOT-3" target="_blank" rel="noopener" class="pbtn r"><i class="fab fa-github"></i> Repo</a>
-          <span class="pbtn nl" style="border-color:rgba(255,79,94,.18);color:#ff7d88"><i class="fas fa-cogs"></i> Hardware / IIoT</span>
+        <div class="pc-cat-tag iot">IIoT</div>
+        <h3 class="pc-title">Smart Street Light System</h3>
+        <p class="pc-desc">IoT-based automated street lighting using LDR and motion sensors to auto-manage lighting intensity. Led team, reducing energy waste by automating power based on ambient conditions.</p>
+        <div class="pc-tech">
+          <span>IoT</span><span>Arduino</span><span>LDR Sensor</span><span>C++</span>
         </div>
-      </div>
-
-      <!-- Web & AI divider -->
-      <div class="div-row" style="grid-column:1/-1;margin-top:16px">
-        <span style="color:var(--accent2)">// Web &amp; AI Projects</span>
-        <span class="line" style="background:linear-gradient(90deg,rgba(123,94,167,.35),transparent)"></span>
-      </div>
-
-      <div class="proj-card rv">
-        <div class="proj-top"><span class="proj-icon">💰</span><span class="proj-n">06</span></div>
-        <h3 class="proj-title">Employee Payroll Management System</h3>
-        <p class="proj-desc">Python-based payroll management system to handle employee records, salary calculation, deductions, and payslip generation. Features a clean CLI interface with file-based data persistence.</p>
-        <div class="proj-tech">
-          <span class="tech-t">Python</span><span class="tech-t">File I/O</span>
-          <span class="tech-t">OOP</span><span class="tech-t">CLI</span>
-        </div>
-        <div class="proj-links">
-          <a href="https://github.com/Hackwithas" target="_blank" rel="noopener" class="pbtn r"><i class="fab fa-github"></i> Repo</a>
+        <div class="pc-footer">
+          <span class="pc-btn-na"><i class="fas fa-microchip"></i> Hardware Project</span>
         </div>
       </div>
 
-      <div class="proj-card rv">
-        <div class="proj-top"><span class="proj-icon">🤖</span><span class="proj-n">07</span></div>
-        <h3 class="proj-title">AI Research Travel Agent</h3>
-        <p class="proj-desc">AI-powered travel research agent that aggregates travel data, suggests itineraries, and provides personalized recommendations using ML and web scraping.</p>
-        <div class="proj-tech">
-          <span class="tech-t">Python</span><span class="tech-t">AI/ML</span>
-          <span class="tech-t">APIs</span><span class="tech-t">Web Scraping</span>
+      <!-- IoT 04 -->
+      <div class="proj-card rv featured" data-cat="iot">
+        <div class="feat-ribbon">TEAM LEAD</div>
+        <div class="pc-top">
+          <span class="pc-emoji">⚙️</span>
+          <div class="pc-num iot">04</div>
+          <div class="pc-links">
+            <a href="https://github.com/Hackwithas/RPM-IIOT-4" target="_blank" rel="noopener" class="pc-link" title="GitHub"><i class="fab fa-github"></i></a>
+          </div>
         </div>
-        <div class="proj-links">
-          <a href="https://github.com/Hackwithas" target="_blank" rel="noopener" class="pbtn r"><i class="fab fa-github"></i> Repo</a>
+        <div class="pc-cat-tag iot">IIoT</div>
+        <h3 class="pc-title">RPM Monitoring System <span class="pc-sub">IIOT-4</span></h3>
+        <p class="pc-desc">Industrial RPM monitoring for real-time machinery tracking. Enables proactive maintenance by continuously logging rotational speed data to prevent equipment failure.</p>
+        <div class="pc-tech">
+          <span>IIoT</span><span>RPM Sensor</span><span>Arduino</span><span>Real-time</span>
         </div>
-      </div>
-
-      <div class="proj-card rv">
-        <div class="proj-top"><span class="proj-icon">🍽️</span><span class="proj-n">08</span></div>
-        <h3 class="proj-title">Restaurant Website</h3>
-        <p class="proj-desc">Fully responsive restaurant website with interactive menu, reservation system, and elegant UI. Optimized for SEO and performance.</p>
-        <div class="proj-tech">
-          <span class="tech-t">HTML</span><span class="tech-t">CSS</span>
-          <span class="tech-t">JavaScript</span><span class="tech-t">Responsive</span>
-        </div>
-        <div class="proj-links">
-          <a href="https://github.com/Hackwithas" target="_blank" rel="noopener" class="pbtn r"><i class="fab fa-github"></i> Repo</a>
+        <div class="pc-footer">
+          <a href="https://github.com/Hackwithas/RPM-IIOT-4" target="_blank" rel="noopener" class="pc-btn">
+            View Repo <i class="fab fa-github"></i>
+          </a>
         </div>
       </div>
 
+      <!-- IoT 05 -->
+      <div class="proj-card rv featured" data-cat="iot">
+        <div class="feat-ribbon">TEAM LEAD</div>
+        <div class="pc-top">
+          <span class="pc-emoji">🏭</span>
+          <div class="pc-num iot">05</div>
+          <div class="pc-links">
+            <a href="https://github.com/Hackwithas/CCFRA-IIOT-3" target="_blank" rel="noopener" class="pc-link" title="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="pc-cat-tag iot">IIoT</div>
+        <h3 class="pc-title">CCFRA Automation System <span class="pc-sub">IIOT-3</span></h3>
+        <p class="pc-desc">IIoT-based automation and control system for industrial process monitoring with real-time feedback and data-driven decision-making for manufacturing environments.</p>
+        <div class="pc-tech">
+          <span>IIoT</span><span>Automation</span><span>Process Control</span><span>Industrial</span>
+        </div>
+        <div class="pc-footer">
+          <a href="https://github.com/Hackwithas/CCFRA-IIOT-3" target="_blank" rel="noopener" class="pc-btn">
+            View Repo <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- AI 06 -->
+      <div class="proj-card rv" data-cat="ai">
+        <div class="pc-top">
+          <span class="pc-emoji">💰</span>
+          <div class="pc-num">06</div>
+          <div class="pc-links">
+            <a href="https://github.com/Hackwithas" target="_blank" rel="noopener" class="pc-link" title="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="pc-cat-tag ai">Python</div>
+        <h3 class="pc-title">Employee Payroll Management System</h3>
+        <p class="pc-desc">Python CLI tool managing employee records, salary calculations, deductions, and payslip generation with file-based data persistence and OOP architecture.</p>
+        <div class="pc-tech">
+          <span>Python</span><span>File I/O</span><span>OOP</span><span>CLI</span>
+        </div>
+        <div class="pc-footer">
+          <a href="https://github.com/Hackwithas" target="_blank" rel="noopener" class="pc-btn">
+            View Repo <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- AI 07 -->
+      <div class="proj-card rv" data-cat="ai">
+        <div class="pc-top">
+          <span class="pc-emoji">🤖</span>
+          <div class="pc-num">07</div>
+          <div class="pc-links">
+            <a href="https://github.com/Hackwithas" target="_blank" rel="noopener" class="pc-link" title="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="pc-cat-tag ai">AI/ML</div>
+        <h3 class="pc-title">AI Research Travel Agent</h3>
+        <p class="pc-desc">AI-powered travel research agent that aggregates travel data, suggests personalized itineraries, and delivers recommendations using ML models and web scraping.</p>
+        <div class="pc-tech">
+          <span>Python</span><span>AI/ML</span><span>APIs</span><span>Web Scraping</span>
+        </div>
+        <div class="pc-footer">
+          <a href="https://github.com/Hackwithas" target="_blank" rel="noopener" class="pc-btn">
+            View Repo <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- WEB 08 -->
+      <div class="proj-card rv" data-cat="web">
+        <div class="pc-top">
+          <span class="pc-emoji">🍽️</span>
+          <div class="pc-num">08</div>
+          <div class="pc-links">
+            <a href="https://github.com/Hackwithas" target="_blank" rel="noopener" class="pc-link" title="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="pc-cat-tag web">Web</div>
+        <h3 class="pc-title">Restaurant Website</h3>
+        <p class="pc-desc">Fully responsive restaurant website with interactive menu, reservation system, and elegant UI design. Optimized for performance and search engine visibility.</p>
+        <div class="pc-tech">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive</span>
+        </div>
+        <div class="pc-footer">
+          <a href="https://github.com/Hackwithas" target="_blank" rel="noopener" class="pc-btn">
+            View Repo <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="proj-more rv">
+      <a href="https://github.com/Hackwithas" target="_blank" rel="noopener" class="btn-primary">
+        <i class="fab fa-github"></i> VIEW ALL ON GITHUB
+      </a>
     </div>
   </div>
 </section>
@@ -408,116 +565,126 @@ target="_blank" rel="noopener" class="pbtn r">Site</a>
 <!-- ══════════ CERTIFICATIONS ══════════ -->
 <section id="certifications">
   <div class="si">
-    <div class="stag">04 — Certifications</div>
-    <h2 class="stitle">CERTIFICATIONS <span>&amp; ACHIEVEMENTS</span></h2>
-    <div class="sline"></div>
-    <p class="cert-section-subtitle">Professional certifications and learning milestones in development, cybersecurity, and emerging technologies.</p>
-    <div class="certs-g">
+    <div class="sec-tag"><span>//</span> 04 — CERTIFICATIONS</div>
+    <h2 class="sec-title">CERTS <span class="outline-text">&amp; ACHIEVEMENTS</span></h2>
+    <div class="sec-line"></div>
+    <p class="sec-subtitle">Professional certifications and learning milestones in development, cybersecurity, and emerging technologies.</p>
 
-      <!-- TCS iON -->
-      <a class="cert-card cert-tcs rv"
-         href="https://www.linkedin.com/posts/hackwithas_tcs-ion-activity-7346773345272557568-IcWF"
-         target="_blank" rel="noopener noreferrer">
-        <div class="cert-badge"><i class="fas fa-check-circle"></i> Verified Credential</div>
-        <div class="cert-icon-wrap">🏢</div>
-        <h3 class="cert-title">TCS iON Certificate</h3>
-        <p class="cert-org">TATA CONSULTANCY SERVICES</p>
-        <p class="cert-desc">Industry-recognized certification from TCS iON covering professional skills and domain knowledge in technology and business fundamentals.</p>
-        <span class="cert-view-btn"><i class="fab fa-linkedin"></i> View Credential <i class="fas fa-arrow-right"></i></span>
-        <div class="cert-glow"></div>
+    <div class="certs-grid">
+
+      <a class="cert-card rv tcs" href="https://www.linkedin.com/posts/hackwithas_tcs-ion-activity-7346773345272557568-IcWF" target="_blank" rel="noopener">
+        <div class="cc-glow"></div>
+        <div class="cc-header">
+          <div class="cc-icon">🏢</div>
+          <div class="cc-verified"><i class="fas fa-check-circle"></i> Verified</div>
+        </div>
+        <h3 class="cc-title">TCS iON Certificate</h3>
+        <p class="cc-org">TATA CONSULTANCY SERVICES</p>
+        <p class="cc-desc">Industry-recognized certification from TCS iON covering professional skills and domain knowledge in technology and business fundamentals.</p>
+        <div class="cc-footer">
+          <span class="cc-link"><i class="fab fa-linkedin"></i> View Credential <i class="fas fa-arrow-right"></i></span>
+        </div>
       </a>
 
-      <!-- EduSkills AI-ML -->
-      <a class="cert-card cert-edu rv"
-         href="https://www.linkedin.com/posts/hackwithas_eduskill-activity-7439356208144338944-CAf5"
-         target="_blank" rel="noopener noreferrer">
-        <div class="cert-badge"><i class="fas fa-check-circle"></i> Verified Credential</div>
-        <div class="cert-icon-wrap">🤖</div>
-        <h3 class="cert-title">AI-ML Virtual Internship</h3>
-        <p class="cert-org">EDUSKILLS × AICTE</p>
-        <p class="cert-desc">Hands-on AI and Machine Learning virtual internship covering practical ML concepts, model training, and real-world AI application development.</p>
-        <span class="cert-view-btn"><i class="fab fa-linkedin"></i> View Credential <i class="fas fa-arrow-right"></i></span>
-        <div class="cert-glow"></div>
+      <a class="cert-card rv purple" href="https://www.linkedin.com/posts/hackwithas_eduskill-activity-7439356208144338944-CAf5" target="_blank" rel="noopener">
+        <div class="cc-glow"></div>
+        <div class="cc-header">
+          <div class="cc-icon">🤖</div>
+          <div class="cc-verified"><i class="fas fa-check-circle"></i> Verified</div>
+        </div>
+        <h3 class="cc-title">AI-ML Virtual Internship</h3>
+        <p class="cc-org">EDUSKILLS × AICTE</p>
+        <p class="cc-desc">Hands-on AI and Machine Learning virtual internship covering practical ML concepts, model training, and real-world AI application development.</p>
+        <div class="cc-footer">
+          <span class="cc-link"><i class="fab fa-linkedin"></i> View Credential <i class="fas fa-arrow-right"></i></span>
+        </div>
       </a>
 
-      <!-- IBM SkillsBuild -->
-      <a class="cert-card rv"
-         href="https://www.linkedin.com/posts/hackwithas_certificate-activity-7374697703471095808-hGG6"
-         target="_blank" rel="noopener noreferrer">
-        <div class="cert-badge"><i class="fas fa-check-circle"></i> Verified Credential</div>
-        <div class="cert-icon-wrap">☁️</div>
-        <h3 class="cert-title">Emerging Technologies: AI &amp; Cloud Internship</h3>
-        <p class="cert-org">IBM SKILLSBUILD × EDUNET × AICTE</p>
-        <p class="cert-desc">4-week internship in Emerging Technologies exploring Artificial Intelligence and Cloud Computing on IBM Cloud Platform, conducted by Edunet Foundation in collaboration with AICTE.</p>
-        <span class="cert-view-btn"><i class="fab fa-linkedin"></i> View Credential <i class="fas fa-arrow-right"></i></span>
-        <div class="cert-glow"></div>
+      <a class="cert-card rv" href="https://www.linkedin.com/posts/hackwithas_certificate-activity-7374697703471095808-hGG6" target="_blank" rel="noopener">
+        <div class="cc-glow"></div>
+        <div class="cc-header">
+          <div class="cc-icon">☁️</div>
+          <div class="cc-verified"><i class="fas fa-check-circle"></i> Verified</div>
+        </div>
+        <h3 class="cc-title">Emerging Technologies: AI &amp; Cloud</h3>
+        <p class="cc-org">IBM SKILLSBUILD × EDUNET × AICTE</p>
+        <p class="cc-desc">4-week internship exploring Artificial Intelligence and Cloud Computing on IBM Cloud Platform, conducted by Edunet Foundation in collaboration with AICTE.</p>
+        <div class="cc-footer">
+          <span class="cc-link"><i class="fab fa-linkedin"></i> View Credential <i class="fas fa-arrow-right"></i></span>
+        </div>
       </a>
 
-      <!-- Ethical Hacking -->
-      <a class="cert-card cert-hack rv"
-         href="https://www.linkedin.com/posts/hackwithas_ethical-hacking-activity-7448295280371765249-2gjU"
-         target="_blank" rel="noopener noreferrer">
-        <div class="cert-badge"><i class="fas fa-check-circle"></i> Verified Credential</div>
-        <div class="cert-icon-wrap">🛡️</div>
-        <h3 class="cert-title">Ethical Hacking Certificate</h3>
-        <p class="cert-org">CYBERSECURITY TRAINING</p>
-        <p class="cert-desc">Certification in ethical hacking methodologies covering penetration testing, vulnerability assessment, network security, and offensive security techniques.</p>
-        <span class="cert-view-btn"><i class="fab fa-linkedin"></i> View Credential <i class="fas fa-arrow-right"></i></span>
-        <div class="cert-glow"></div>
+      <a class="cert-card rv red" href="https://www.linkedin.com/posts/hackwithas_ethical-hacking-activity-7448295280371765249-2gjU" target="_blank" rel="noopener">
+        <div class="cc-glow"></div>
+        <div class="cc-header">
+          <div class="cc-icon">🛡️</div>
+          <div class="cc-verified"><i class="fas fa-check-circle"></i> Verified</div>
+        </div>
+        <h3 class="cc-title">Ethical Hacking Certificate</h3>
+        <p class="cc-org">CYBERSECURITY TRAINING</p>
+        <p class="cc-desc">Certification in ethical hacking methodologies covering penetration testing, vulnerability assessment, network security, and offensive security techniques.</p>
+        <div class="cc-footer">
+          <span class="cc-link"><i class="fab fa-linkedin"></i> View Credential <i class="fas fa-arrow-right"></i></span>
+        </div>
       </a>
 
-      <!-- Infosys Website Development -->
-      <a class="cert-card rv"
-         href="https://www.linkedin.com/posts/hackwithas_infosys-website-development-tutorial-certificate-activity-7342015099424976896-rasC"
-         target="_blank" rel="noopener noreferrer">
-        <div class="cert-badge"><i class="fas fa-check-circle"></i> Verified Credential</div>
-        <div class="cert-icon-wrap">🌐</div>
-        <h3 class="cert-title">Website Development Course</h3>
-        <p class="cert-org">INFOSYS SPRINGBOARD</p>
-        <p class="cert-desc">Completed website development training covering frontend development concepts, modern HTML/CSS techniques, and responsive web design principles.</p>
-        <span class="cert-view-btn"><i class="fab fa-linkedin"></i> View Credential <i class="fas fa-arrow-right"></i></span>
-        <div class="cert-glow"></div>
+      <a class="cert-card rv" href="https://www.linkedin.com/posts/hackwithas_infosys-website-development-tutorial-certificate-activity-7342015099424976896-rasC" target="_blank" rel="noopener">
+        <div class="cc-glow"></div>
+        <div class="cc-header">
+          <div class="cc-icon">🌐</div>
+          <div class="cc-verified"><i class="fas fa-check-circle"></i> Verified</div>
+        </div>
+        <h3 class="cc-title">Website Development Course</h3>
+        <p class="cc-org">INFOSYS SPRINGBOARD</p>
+        <p class="cc-desc">Completed website development training covering frontend development concepts, modern HTML/CSS techniques, and responsive web design principles.</p>
+        <div class="cc-footer">
+          <span class="cc-link"><i class="fab fa-linkedin"></i> View Credential <i class="fas fa-arrow-right"></i></span>
+        </div>
       </a>
 
-      <!-- Deloitte Australia -->
-      <a class="cert-card cert-tcs rv"
-         href="https://www.linkedin.com/posts/hackwithas_forage-certificate-activity-7343181118554202113-kInt"
-         target="_blank" rel="noopener noreferrer">
-        <div class="cert-badge"><i class="fas fa-check-circle"></i> Verified Credential</div>
-        <div class="cert-icon-wrap">💼</div>
-        <h3 class="cert-title">Technology Job Simulation</h3>
-        <p class="cert-org">FORAGE × DELOITTE AUSTRALIA</p>
-        <p class="cert-desc">Successfully completed Deloitte Australia's Technology Job Simulation through Forage, gaining practical exposure to real-world technology and cybersecurity workflows.</p>
-        <span class="cert-view-btn"><i class="fab fa-linkedin"></i> View Credential <i class="fas fa-arrow-right"></i></span>
-        <div class="cert-glow"></div>
+      <a class="cert-card rv tcs" href="https://www.linkedin.com/posts/hackwithas_forage-certificate-activity-7343181118554202113-kInt" target="_blank" rel="noopener">
+        <div class="cc-glow"></div>
+        <div class="cc-header">
+          <div class="cc-icon">💼</div>
+          <div class="cc-verified"><i class="fas fa-check-circle"></i> Verified</div>
+        </div>
+        <h3 class="cc-title">Technology Job Simulation</h3>
+        <p class="cc-org">FORAGE × DELOITTE AUSTRALIA</p>
+        <p class="cc-desc">Completed Deloitte Australia's Technology Job Simulation through Forage, gaining practical exposure to real-world technology and cybersecurity workflows.</p>
+        <div class="cc-footer">
+          <span class="cc-link"><i class="fab fa-linkedin"></i> View Credential <i class="fas fa-arrow-right"></i></span>
+        </div>
       </a>
 
-      <!-- Google GenAI -->
-      <a class="cert-card cert-edu rv"
-         href="https://www.linkedin.com/posts/hackwithas_introduction-to-generate-ai-activity-7343306915319287808-o2i4"
-         target="_blank" rel="noopener noreferrer">
-        <div class="cert-badge"><i class="fas fa-check-circle"></i> Verified Credential</div>
-        <div class="cert-icon-wrap">✨</div>
-        <h3 class="cert-title">Introduction to Generative AI</h3>
-        <p class="cert-org">GOOGLE CLOUD SKILLS BOOST</p>
-        <p class="cert-desc">Completed the "Introduction to Generative AI" program covering foundational concepts of generative AI, large language models, and modern AI-powered technologies.</p>
-        <span class="cert-view-btn"><i class="fab fa-linkedin"></i> View Credential <i class="fas fa-arrow-right"></i></span>
-        <div class="cert-glow"></div>
+      <a class="cert-card rv purple" href="https://www.linkedin.com/posts/hackwithas_introduction-to-generate-ai-activity-7343306915319287808-o2i4" target="_blank" rel="noopener">
+        <div class="cc-glow"></div>
+        <div class="cc-header">
+          <div class="cc-icon">✨</div>
+          <div class="cc-verified"><i class="fas fa-check-circle"></i> Verified</div>
+        </div>
+        <h3 class="cc-title">Introduction to Generative AI</h3>
+        <p class="cc-org">GOOGLE CLOUD SKILLS BOOST</p>
+        <p class="cc-desc">Completed "Introduction to Generative AI" covering foundational concepts of generative AI, large language models, and modern AI-powered technologies.</p>
+        <div class="cc-footer">
+          <span class="cc-link"><i class="fab fa-linkedin"></i> View Credential <i class="fas fa-arrow-right"></i></span>
+        </div>
       </a>
 
     </div>
   </div>
 </section>
 
-<!-- ══════════ GITHUB ══════════ -->
+<!-- ══════════ GITHUB ACTIVITY ══════════ -->
 <section id="gh-sec">
   <div class="si">
-    <div class="stag">05 — Activity</div>
-    <h2 class="stitle">GITHUB <span>CONTRIBUTIONS</span></h2>
-    <div class="sline"></div>
-    <div class="gh-box rv">
-      <img src="https://ghchart.rshah.org/00ffb3/Hackwithas" alt="GitHub Contribution Chart" loading="lazy" onerror="this.style.display='none'">
-      <div class="gh-row">
+    <div class="sec-tag"><span>//</span> 05 — ACTIVITY</div>
+    <h2 class="sec-title">GITHUB <span class="outline-text">CONTRIBUTIONS</span></h2>
+    <div class="sec-line"></div>
+    <div class="gh-container rv">
+      <div class="gh-chart">
+        <img src="https://ghchart.rshah.org/00ffb3/Hackwithas" alt="GitHub Contribution Chart" loading="lazy" onerror="this.style.display='none'">
+      </div>
+      <div class="gh-cards">
         <div class="gh-card">
           <img src="https://github-readme-stats.vercel.app/api?username=Hackwithas&show_icons=true&theme=dark&bg_color=00000000&title_color=00ffb3&text_color=7998a8&icon_color=7b5ea7&hide_border=true" alt="GitHub Stats" loading="lazy" onerror="this.parentElement.style.display='none'">
         </div>
@@ -525,8 +692,8 @@ target="_blank" rel="noopener" class="pbtn r">Site</a>
           <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Hackwithas&layout=compact&theme=dark&bg_color=00000000&title_color=00ffb3&text_color=7998a8&hide_border=true" alt="Top Languages" loading="lazy" onerror="this.parentElement.style.display='none'">
         </div>
       </div>
-      <div style="margin-top:24px">
-        <a href="https://github.com/Hackwithas" target="_blank" rel="noopener" class="btn-a btn-ghost" style="margin:0 auto;clip-path:none;border-radius:2px;">
+      <div class="gh-cta">
+        <a href="https://github.com/Hackwithas" target="_blank" rel="noopener" class="btn-outline">
           <i class="fab fa-github"></i> VIEW FULL GITHUB PROFILE
         </a>
       </div>
@@ -537,39 +704,49 @@ target="_blank" rel="noopener" class="pbtn r">Site</a>
 <!-- ══════════ CONTACT ══════════ -->
 <section id="contact">
   <div class="si">
-    <div class="stag">06 — Contact</div>
-    <h2 class="stitle">LET'S <span>CONNECT</span></h2>
-    <div class="sline"></div>
-    <div class="contact-g">
+    <div class="sec-tag"><span>//</span> 06 — CONTACT</div>
+    <h2 class="sec-title">LET'S <span class="outline-text">CONNECT</span></h2>
+    <div class="sec-line"></div>
 
-      <div class="rv">
-        <h3 class="contact-hd">REACH OUT</h3>
-        <a href="mailto:ayushssharmaa@gmail.com" class="ci">
-          <div class="ci-icon"><i class="fas fa-envelope"></i></div>
-          <div><div class="ci-lbl">Email</div><div class="ci-val">ayushssharmaa@gmail.com</div></div>
-        </a>
-        <a href="tel:+919627898972" class="ci">
-          <div class="ci-icon"><i class="fas fa-phone"></i></div>
-          <div><div class="ci-lbl">Phone</div><div class="ci-val">+91 9627898972</div></div>
-        </a>
-        <a href="https://www.linkedin.com/in/hackwithas/" target="_blank" rel="noopener" class="ci">
-          <div class="ci-icon"><i class="fab fa-linkedin"></i></div>
-          <div><div class="ci-lbl">LinkedIn</div><div class="ci-val">linkedin.com/in/hackwithas</div></div>
-        </a>
-        <a href="https://github.com/Hackwithas" target="_blank" rel="noopener" class="ci">
-          <div class="ci-icon"><i class="fab fa-github"></i></div>
-          <div><div class="ci-lbl">GitHub</div><div class="ci-val">github.com/Hackwithas</div></div>
-        </a>
-        <div style="margin-top:20px">
-          <a href="https://drive.google.com/file/d/1Ng56OsYdp_3wa2B2o6g7SZW2t90scfcH/view?usp=sharing" target="_blank" rel="noopener" class="btn-a btn-solid" style="display:inline-flex">
-            <i class="fas fa-download"></i> DOWNLOAD RESUME
+    <div class="contact-grid">
+
+      <div class="contact-left rv">
+        <p class="contact-intro">Whether you have an opportunity, a project idea, or just want to chat about cybersecurity — my inbox is always open.</p>
+
+        <div class="contact-items">
+          <a href="mailto:ayushssharmaa@gmail.com" class="citem">
+            <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+            <div><div class="ci-label">Email</div><div class="ci-value">ayushssharmaa@gmail.com</div></div>
+            <i class="fas fa-arrow-right ci-arrow"></i>
+          </a>
+          <a href="tel:+919627898972" class="citem">
+            <div class="ci-icon"><i class="fas fa-phone"></i></div>
+            <div><div class="ci-label">Phone</div><div class="ci-value">+91 9627898972</div></div>
+            <i class="fas fa-arrow-right ci-arrow"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/hackwithas/" target="_blank" rel="noopener" class="citem">
+            <div class="ci-icon"><i class="fab fa-linkedin"></i></div>
+            <div><div class="ci-label">LinkedIn</div><div class="ci-value">linkedin.com/in/hackwithas</div></div>
+            <i class="fas fa-arrow-right ci-arrow"></i>
+          </a>
+          <a href="https://github.com/Hackwithas" target="_blank" rel="noopener" class="citem">
+            <div class="ci-icon"><i class="fab fa-github"></i></div>
+            <div><div class="ci-label">GitHub</div><div class="ci-value">github.com/Hackwithas</div></div>
+            <i class="fas fa-arrow-right ci-arrow"></i>
           </a>
         </div>
+
+        <a href="https://drive.google.com/file/d/1Ng56OsYdp_3wa2B2o6g7SZW2t90scfcH/view?usp=sharing" target="_blank" rel="noopener" class="btn-primary" style="margin-top:24px;display:inline-flex">
+          <i class="fas fa-download"></i> DOWNLOAD RESUME
+        </a>
       </div>
 
-      <div class="rv">
-        <div class="form-wrap">
-          <h3 class="form-hd">SEND MESSAGE</h3>
+      <div class="contact-right rv">
+        <div class="form-card">
+          <div class="form-header">
+            <span class="form-icon"><i class="fas fa-paper-plane"></i></span>
+            <span>SEND A MESSAGE</span>
+          </div>
           <div class="fg">
             <label for="nm">Name</label>
             <input type="text" id="nm" placeholder="Your name..." autocomplete="name">
@@ -580,10 +757,14 @@ target="_blank" rel="noopener" class="pbtn r">Site</a>
           </div>
           <div class="fg">
             <label for="ms">Message</label>
-            <textarea id="ms" placeholder="Your message..."></textarea>
+            <textarea id="ms" placeholder="What's on your mind?"></textarea>
           </div>
-          <button class="btn-send" onclick="sendMsg()"><i class="fas fa-paper-plane"></i> SEND MESSAGE</button>
-          <div class="fsuccess" id="fs">✅ Redirecting to WhatsApp...</div>
+          <button class="btn-send" onclick="sendMsg()">
+            <i class="fas fa-paper-plane"></i> SEND VIA WHATSAPP
+          </button>
+          <div class="form-success" id="fs">
+            <i class="fas fa-check-circle"></i> Redirecting to WhatsApp...
+          </div>
         </div>
       </div>
 
@@ -593,17 +774,29 @@ target="_blank" rel="noopener" class="pbtn r">Site</a>
 
 <!-- ══════════ FOOTER ══════════ -->
 <footer>
-  <div class="ft-socials">
-    <a href="https://github.com/Hackwithas" target="_blank" rel="noopener" class="soc" aria-label="GitHub"><i class="fab fa-github"></i></a>
-    <a href="https://www.linkedin.com/in/hackwithas/" target="_blank" rel="noopener" class="soc" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="mailto:ayushssharmaa@gmail.com" class="soc" aria-label="Email"><i class="fas fa-envelope"></i></a>
-    <a href="tel:+919627898972" class="soc" aria-label="Phone"><i class="fas fa-phone"></i></a>
-    <a href="https://www.instagram.com/ayushpandiit/" target="_blank" rel="noopener" class="soc" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://portfolio-hackwithas.vercel.app/" target="_blank" rel="noopener" class="soc" aria-label="Portfolio"><i class="fas fa-globe"></i></a>
+  <div class="ft-inner">
+    <div class="ft-top">
+      <div class="ft-brand">
+        <span class="ft-name">Ayush Sharma</span>
+        <span class="ft-tagline">Building secure digital experiences.</span>
+      </div>
+      <div class="ft-socials">
+        <a href="https://github.com/Hackwithas" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/hackwithas/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:ayushssharmaa@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="tel:+919627898972" aria-label="Phone"><i class="fas fa-phone"></i></a>
+        <a href="https://www.instagram.com/ayushpandiit/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://portfolio-hackwithas.vercel.app/" target="_blank" rel="noopener" aria-label="Portfolio"><i class="fas fa-globe"></i></a>
+      </div>
+    </div>
+    <div class="ft-divider"></div>
+    <div class="ft-bottom">
+      <p>© 2025 <span>Ayush Sharma</span>. All rights reserved.</p>
+      <p>⚡ Built with <span class="ft-accent">Code</span> &amp; <span class="ft-purple">Security Mindset</span></p>
+    </div>
   </div>
-  <p class="ft-copy">© 2025 <span>Ayush Sharma</span>. All rights reserved.</p>
-  <p class="ft-built">⚡ Built with <span style="color:var(--accent)">Code</span> &amp; <span style="color:#b06fff">Security Mindset</span></p>
 </footer>
+
 <script src="script.js"></script>
 </body>
 </html>
