@@ -7,14 +7,14 @@ document.getElementById('enterBtn').addEventListener('click', () => {
   document.body.style.overflow = '';
 });
 
-/* ─── Theme Toggle (in-memory, no persistence) ─── */
+/* ─── Theme Toggle (default: light, set in HTML. Dark is opt-in, in-memory only) ─── */
 const html = document.documentElement;
 const themeBtn = document.getElementById('themeToggle');
-html.classList.add('dark-theme');
+themeBtn.innerHTML = '<i class="fas fa-moon" aria-hidden="true"></i>';
 themeBtn.addEventListener('click', () => {
-  const isLight = html.classList.toggle('light-theme');
-  html.classList.toggle('dark-theme', !isLight);
-  themeBtn.innerHTML = isLight
+  const isDark = html.classList.toggle('dark-theme');
+  html.classList.toggle('light-theme', !isDark);
+  themeBtn.innerHTML = isDark
     ? '<i class="fas fa-sun" aria-hidden="true"></i>'
     : '<i class="fas fa-moon" aria-hidden="true"></i>';
 });
