@@ -32,7 +32,10 @@ function showSection(id) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-ftabs.forEach(t => t.addEventListener('click', () => showSection(t.dataset.section)));
+ftabs.forEach(t => t.addEventListener('click', (e) => {
+  e.preventDefault();
+  showSection(t.dataset.section);
+}));
 mobTabs.forEach(t => t.addEventListener('click', () => {
   showSection(t.dataset.section);
   closeMobileMenu();
