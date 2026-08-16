@@ -19,6 +19,22 @@ themeBtn.addEventListener('click', () => {
     : '<i class="fas fa-moon" aria-hidden="true"></i>';
 });
 
+/* ─── Age (from DOB) ─── */
+function calcAge(day, month, year) {
+  const today = new Date();
+  const dob = new Date(year, month - 1, day);
+  let age = today.getFullYear() - dob.getFullYear();
+  const hasHadBirthdayThisYear =
+    today.getMonth() > dob.getMonth() ||
+    (today.getMonth() === dob.getMonth() && today.getDate() >= dob.getDate());
+  if (!hasHadBirthdayThisYear) age--;
+  return age;
+}
+const ageStat = document.getElementById('ageStat');
+if (ageStat) {
+  ageStat.textContent = calcAge(1, 1, 2007); // DOB: 1 Jan 2007
+}
+
 /* ─── Tab / Filter Navigation ─── */
 const sections = document.querySelectorAll('.tab-section');
 const ftabs = document.querySelectorAll('.ftab');
