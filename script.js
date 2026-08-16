@@ -19,6 +19,49 @@ themeBtn.addEventListener('click', () => {
     : '<i class="fas fa-moon" aria-hidden="true"></i>';
 });
 
+/* ─── Live clock (with seconds) on splash ─── */
+const splashClock = document.getElementById('splashClock');
+function tickClock() {
+  if (!splashClock) return;
+  const now = new Date();
+  const h = String(now.getHours()).padStart(2, '0');
+  const m = String(now.getMinutes()).padStart(2, '0');
+  const s = String(now.getSeconds()).padStart(2, '0');
+  splashClock.textContent = `${h}:${m}:${s}`;
+}
+tickClock();
+setInterval(tickClock, 1000);
+
+/* ─── Visit counter ───
+   Uses a free public counter (countapi.xyz) so the number reflects
+   everyone who has opened the site, not just this one browser.
+   Falls back to a local (this-device-only) count if the request fails
+   (e.g. offline, or the API is unreachable). */
+(function trackVisits() {
+  const visitEl = document.getElementById('visitCount');
+  if (!visitEl) return;
+
+  function showLocalFallback() {
+    let n = parseInt(localStorage.getItem('hwas_local_visits') || '0', 10) + 1;
+    localStorage.setItem('hwas_local_visits', String(n));
+    visitEl.textContent = n.toLocaleString();
+  }
+
+  fetch('https://api.countapi.xyz/hit/hackwithas.in/site-visits')
+    .then(res => {
+      if (!res.ok) throw new Error('counter unavailable');
+      return res.json();
+    })
+    .then(data => {
+      if (data && typeof data.value === 'number') {
+        visitEl.textContent = data.value.toLocaleString();
+      } else {
+        showLocalFallback();
+      }
+    })
+    .catch(showLocalFallback);
+})();
+
 /* ─── Age (from DOB) ─── */
 function calcAge(day, month, year) {
   const today = new Date();
