@@ -11,7 +11,10 @@
   --muted: #5c5c64;
   --dim: #8b8b93;
   --accent: #0f9d68;
+  --accent-2: #0ea5e9;
   --accent-ink: #ffffff;
+  --accent-grad: linear-gradient(135deg, #0f9d68, #0ea5e9);
+  --accent-glow: rgba(15,157,104,.22);
 
   --mono: 'JetBrains Mono', ui-monospace, monospace;
   --body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -35,7 +38,10 @@ html.dark-theme {
   --muted: #96969e;
   --dim: #5c5c64;
   --accent: #34d399;
+  --accent-2: #22d3ee;
   --accent-ink: #06120d;
+  --accent-grad: linear-gradient(135deg, #34d399, #22d3ee);
+  --accent-glow: rgba(52,211,153,.22);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -90,7 +96,10 @@ button { font: inherit; }
   opacity: .16; filter: blur(60px); pointer-events: none;
 }
 #splash::before { width: 480px; height: 480px; top: -140px; left: -120px; animation: blobFloat1 14s ease-in-out infinite; }
-#splash::after { width: 380px; height: 380px; bottom: -120px; right: -100px; animation: blobFloat2 16s ease-in-out infinite; }
+#splash::after {
+  width: 380px; height: 380px; bottom: -120px; right: -100px; animation: blobFloat2 16s ease-in-out infinite;
+  background: radial-gradient(circle, var(--accent-2), transparent 70%);
+}
 @keyframes blobFloat1 {
   0%, 100% { transform: translate(0,0) scale(1); }
   50% { transform: translate(60px, 40px) scale(1.15); }
@@ -205,13 +214,22 @@ html.light-theme .mob-nav { background: rgba(247,247,248,.98); }
   white-space: nowrap;
 }
 .ftab:hover { border-color: var(--border-strong); color: var(--text); }
-.ftab.active { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.ftab.active { background: var(--accent-grad); border-color: transparent; color: var(--accent-ink); }
 
 /* ═══════════════════════════════════════
    TAB SECTIONS
 ═══════════════════════════════════════ */
-.tab-section { display: none; padding: var(--space-5) 48px; }
+.tab-section { display: none; padding: var(--space-5) 48px; position: relative; }
 .tab-section.active { display: block; }
+
+/* ambient color wash behind the About tab */
+#about::before {
+  content: ''; position: absolute; top: -40px; left: 50%; transform: translateX(-50%);
+  width: min(900px, 90%); height: 420px;
+  background: radial-gradient(ellipse at top, var(--accent-glow), transparent 70%);
+  pointer-events: none; z-index: 0; opacity: .8;
+}
+#about > .si { position: relative; z-index: 1; }
 
 .tab-section.active > .si > * {
   opacity: 0; transform: translateY(14px);
@@ -231,8 +249,14 @@ html.light-theme .mob-nav { background: rgba(247,247,248,.98); }
   .tab-section.active > .si > * { animation: none; opacity: 1; transform: none; }
 }
 
-.si { max-width: var(--container); margin: 0 auto; }
-.eyebrow { font-family: var(--mono); font-size: .74rem; letter-spacing: .04em; color: var(--accent); text-transform: uppercase; margin-bottom: 10px; }
+.si { max-width: var(--container); margin: 0 auto; position: relative; }
+.eyebrow {
+  display: inline-block;
+  font-family: var(--mono); font-size: .72rem; letter-spacing: .04em;
+  color: var(--accent-ink); text-transform: uppercase; margin-bottom: 14px;
+  background: var(--accent-grad);
+  padding: 5px 13px; border-radius: 999px;
+}
 .sec-title { font-size: clamp(1.9rem, 3.2vw, 2.6rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 14px; line-height: 1.15; }
 .sec-subtitle { font-size: 1rem; color: var(--muted); max-width: 560px; line-height: 1.7; margin-bottom: var(--space-4); }
 .sub-title { font-size: 1.05rem; font-weight: 700; margin-bottom: 14px; }
@@ -249,10 +273,11 @@ html.light-theme .mob-nav { background: rgba(247,247,248,.98); }
 
 .btn-primary {
   display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: 999px;
-  background: var(--accent); color: var(--accent-ink); font-size: .92rem; font-weight: 600;
-  transition: opacity .2s, transform .2s; border: none; cursor: pointer;
+  background: var(--accent-grad); color: var(--accent-ink); font-size: .92rem; font-weight: 600;
+  transition: opacity .2s, transform .2s, box-shadow .2s; border: none; cursor: pointer;
+  box-shadow: 0 6px 20px -6px var(--accent-glow);
 }
-.btn-primary:hover { opacity: .88; transform: translateY(-1px); }
+.btn-primary:hover { opacity: .92; transform: translateY(-1px); box-shadow: 0 10px 28px -6px var(--accent-glow); }
 
 .btn-outline {
   display: inline-flex; align-items: center; gap: 8px; padding: 12px 25px; border-radius: 999px;
@@ -278,18 +303,25 @@ html.light-theme .mob-nav { background: rgba(247,247,248,.98); }
   gap: var(--space-3); padding-top: var(--space-3); border-top: 1px solid var(--border);
 }
 .stat { text-align: left; }
-.sn { display: block; font-size: 1.9rem; font-weight: 800; letter-spacing: -0.02em; }
+.sn {
+  display: block; font-size: 1.9rem; font-weight: 800; letter-spacing: -0.02em;
+  background: var(--accent-grad); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
 .sl { display: block; font-size: .78rem; color: var(--muted); margin-top: 2px; }
 
 /* ── Academics ── */
 .academics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-2); }
-.acad-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; }
+.acad-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; transition: border-color .25s, box-shadow .25s, transform .25s; }
+.acad-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 12px 28px -14px var(--accent-glow); }
 .acad-top { display: flex; justify-content: space-between; align-items: start; gap: 12px; margin-bottom: 8px; }
 .acad-top h3 { font-size: 1.02rem; font-weight: 700; }
 .acad-year { font-family: var(--mono); font-size: .72rem; color: var(--muted); white-space: nowrap; }
 .acad-org { font-size: .86rem; color: var(--muted); margin-bottom: 18px; }
 .acad-score { display: flex; align-items: baseline; gap: 8px; }
-.acad-score-num { font-size: 1.7rem; font-weight: 800; color: var(--accent); }
+.acad-score-num {
+  font-size: 1.7rem; font-weight: 800;
+  background: var(--accent-grad); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
 .acad-score-label { font-size: .78rem; color: var(--muted); }
 
 /* ── Skills ── */
@@ -315,6 +347,11 @@ html.light-theme .mob-nav { background: rgba(247,247,248,.98); }
   display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--space-4); align-items: center;
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
   padding: var(--space-4); margin-bottom: var(--space-2);
+  position: relative; overflow: hidden;
+}
+.proj-featured::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--accent-grad);
 }
 .pf-body h3 { font-size: 1.4rem; font-weight: 700; margin: 12px 0; letter-spacing: -0.01em; }
 .pf-body p { font-size: .96rem; color: var(--muted); line-height: 1.7; margin-bottom: 20px; max-width: 460px; }
@@ -326,7 +363,7 @@ html.light-theme .mob-nav { background: rgba(247,247,248,.98); }
 
 .proj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--space-2); margin-top: var(--space-2); margin-bottom: var(--space-4); }
 .proj-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; display: flex; flex-direction: column; transition: border-color .25s, transform .25s; }
-.proj-card:hover { border-color: var(--border-strong); transform: translateY(-3px); }
+.proj-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 14px 32px -14px var(--accent-glow); }
 .proj-card.hidden { display: none; }
 
 .pc-cat-tag {
