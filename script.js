@@ -1,67 +1,88 @@
-/* ─── Scroll Progress + Sticky Nav + Back-to-top ─── */
-window.addEventListener('scroll', () => {
-  const st = window.scrollY;
-  const dh = document.documentElement.scrollHeight - window.innerHeight;
-  document.getElementById('sp').style.width = (dh > 0 ? st / dh * 100 : 0) + '%';
-  document.getElementById('nb').classList.toggle('sh', st > 40);
-  document.getElementById('btt').classList.toggle('on', st > 400);
+/* ─── Splash → Home ─── */
+const splash = document.getElementById('splash');
+const home = document.getElementById('home');
+document.getElementById('enterBtn').addEventListener('click', () => {
+  splash.classList.add('hide');
+  home.classList.add('show');
+  document.body.style.overflow = '';
 });
 
-document.getElementById('btt').addEventListener('click', () => {
+/* ─── Theme Toggle (in-memory, no persistence) ─── */
+const html = document.documentElement;
+const themeBtn = document.getElementById('themeToggle');
+html.classList.add('dark-theme');
+themeBtn.addEventListener('click', () => {
+  const isLight = html.classList.toggle('light-theme');
+  html.classList.toggle('dark-theme', !isLight);
+  themeBtn.innerHTML = isLight
+    ? '<i class="fas fa-sun" aria-hidden="true"></i>'
+    : '<i class="fas fa-moon" aria-hidden="true"></i>';
+});
+
+/* ─── Tab / Filter Navigation ─── */
+const sections = document.querySelectorAll('.tab-section');
+const ftabs = document.querySelectorAll('.ftab');
+const mobTabs = document.querySelectorAll('.mob-ftab');
+
+function showSection(id) {
+  sections.forEach(s => s.classList.toggle('active', s.dataset.section === id));
+  ftabs.forEach(t => t.classList.toggle('active', t.dataset.section === id));
+  mobTabs.forEach(t => t.classList.toggle('active', t.dataset.section === id));
+  document.getElementById('content').scrollTo({ top: 0 });
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+ftabs.forEach(t => t.addEventListener('click', () => showSection(t.dataset.section)));
+mobTabs.forEach(t => t.addEventListener('click', () => {
+  showSection(t.dataset.section);
+  closeMobileMenu();
+}));
+
+/* Any element with data-goto jumps to a section (e.g. hero "View Projects") */
+document.querySelectorAll('[data-goto]').forEach(el => {
+  el.addEventListener('click', () => showSection(el.dataset.goto));
 });
 
-/* ─── Reveal on Scroll ─── */
-const ro = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
-}, { threshold: .1 });
-document.querySelectorAll('.rv').forEach(el => ro.observe(el));
+document.getElementById('brandHome').addEventListener('click', (e) => {
+  e.preventDefault();
+  showSection('about');
+});
 
 /* ─── Mobile Nav ─── */
 const hbg = document.getElementById('hbg');
 const mob = document.getElementById('mob');
+function closeMobileMenu() {
+  hbg.classList.remove('on');
+  mob.classList.remove('on');
+  hbg.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
 hbg.addEventListener('click', () => {
   const isOpen = mob.classList.toggle('on');
   hbg.classList.toggle('on', isOpen);
   hbg.setAttribute('aria-expanded', isOpen);
   document.body.style.overflow = isOpen ? 'hidden' : '';
 });
-document.querySelectorAll('#mob a').forEach(a => {
-  a.addEventListener('click', () => {
-    hbg.classList.remove('on');
-    mob.classList.remove('on');
-    hbg.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  });
+
+/* ─── Back to top ─── */
+window.addEventListener('scroll', () => {
+  document.getElementById('btt').classList.toggle('on', window.scrollY > 400);
+});
+document.getElementById('btt').addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-/* ─── Project Filter ─── */
-const tabs = document.querySelectorAll('.ptab');
+/* ─── Project Filter (within Projects tab) ─── */
+const ptabs = document.querySelectorAll('.ptab');
 const cards = document.querySelectorAll('.proj-card');
-
-tabs.forEach(tab => {
+ptabs.forEach(tab => {
   tab.addEventListener('click', () => {
-    tabs.forEach(t => t.classList.remove('active'));
+    ptabs.forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
     const filter = tab.dataset.filter;
     cards.forEach(card => {
-      const cat = card.dataset.cat;
-      card.classList.toggle('hidden', !(filter === 'all' || cat === filter));
+      card.classList.toggle('hidden', !(filter === 'all' || card.dataset.cat === filter));
     });
-  });
-});
-
-/* ─── Active Nav Link on Scroll ─── */
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-ul a');
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(sec => {
-    const top = sec.offsetTop - 140;
-    if (window.scrollY >= top) current = sec.id;
-  });
-  navLinks.forEach(a => {
-    a.style.color = a.getAttribute('href') === '#' + current ? 'var(--text)' : '';
   });
 });
 
@@ -81,16 +102,3 @@ function sendMsg() {
   document.getElementById('ms').value = '';
   setTimeout(() => { fs.style.display = 'none'; }, 4000);
 }
-
-/* ─── Smooth Anchor Scroll ─── */
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const id = a.getAttribute('href');
-    if (id.length < 2) return;
-    const target = document.querySelector(id);
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
-});
