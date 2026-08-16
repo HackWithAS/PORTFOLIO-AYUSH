@@ -105,7 +105,7 @@ button { font: inherit; }
 html.light-theme #topbar { background: rgba(247,247,248,.8); }
 
 .brand { display: flex; align-items: center; gap: 9px; }
-.brand-icon { height: 26px; width: auto; border-radius: 5px; }
+.brand-icon { height: 40px; width: auto; border-radius: 5px; }
 .brand-text { font-size: .98rem; font-weight: 700; letter-spacing: -0.01em; }
 
 .topbar-actions { display: flex; align-items: center; gap: 12px; }
