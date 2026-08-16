@@ -96,6 +96,7 @@
 
 <!-- ══════════ LANDING SPLASH ══════════ -->
 <div id="splash">
+  <div class="splash-scan" aria-hidden="true"></div>
   <div class="splash-inner">
     <img src="logo15.png" alt="HackWithAS logo — Ayush Sharma" class="splash-logo" onerror="this.style.display='none'">
     <p class="splash-title">Welcome to <span>HackWithAS</span></p>
@@ -121,6 +122,13 @@
     </a>
 
     <div class="topbar-actions">
+      <div class="topbar-social" aria-label="Quick contact links">
+        <a href="https://wa.me/919627898972" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/hackwithas/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+        <a href="https://github.com/HackWithAS" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+        <a href="https://t.me/hackwihas" target="_blank" rel="noopener" aria-label="Telegram" title="Telegram"><i class="fab fa-telegram" aria-hidden="true"></i></a>
+        <a href="mailto:ayushssharmaa@gmail.com" aria-label="Email" title="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+      </div>
       <button id="themeToggle" aria-label="Toggle theme">
         <i class="fas fa-moon" aria-hidden="true"></i>
       </button>
@@ -155,6 +163,13 @@
       <button class="mob-ftab" data-section="certifications">Certifications</button>
       <button class="mob-ftab" data-section="contact">Contact</button>
       <a href="https://drive.google.com/file/d/1ZN07Br1Z-2BtZUU2TFno4h2-OjCc0JJ_/view?usp=drive_link" target="_blank" rel="noopener" class="mob-resume">Resume →</a>
+      <div class="mob-socials">
+        <a href="https://wa.me/919627898972" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/hackwithas/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+        <a href="https://github.com/HackWithAS" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+        <a href="https://t.me/hackwihas" target="_blank" rel="noopener" aria-label="Telegram"><i class="fab fa-telegram" aria-hidden="true"></i></a>
+        <a href="mailto:ayushssharmaa@gmail.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+      </div>
     </div>
   </div>
 
@@ -163,23 +178,35 @@
     <!-- ═══ ABOUT ═══ -->
     <section class="tab-section active" id="about" data-section="about">
       <div class="si">
-        <p class="eyebrow">HackWithAS</p>
-        <h1 class="hero-name">Ayush Sharma</h1>
-        <p class="hero-role">Cybersecurity &middot; Web Development &middot; AI/ML &middot; IIoT</p>
-        <p class="hero-desc">HackWithAS is the personal technology portfolio of Ayush Sharma, a B.Tech Computer Science &amp; Engineering student at Invertis University, Bareilly, focused on cybersecurity, web development, AI/ML and Industrial IoT.</p>
+        <div class="about-hero-wrap">
+          <div class="about-hero-text">
+            <p class="eyebrow">HackWithAS</p>
+            <h1 class="hero-name">Ayush Sharma</h1>
+            <p class="hero-role">Cybersecurity &middot; Web Development &middot; AI/ML &middot; IIoT</p>
+            <p class="hero-desc">HackWithAS is the personal technology portfolio of Ayush Sharma, a B.Tech Computer Science &amp; Engineering student at Invertis University, Bareilly, focused on cybersecurity, web development, AI/ML and Industrial IoT.</p>
 
-        <div class="hero-actions">
-          <button class="btn-primary" data-goto="projects">View Projects</button>
-          <a href="https://drive.google.com/file/d/1ZN07Br1Z-2BtZUU2TFno4h2-OjCc0JJ_/view?usp=drive_link" target="_blank" rel="noopener" class="btn-outline"><i class="fas fa-arrow-down" aria-hidden="true"></i> Download Resume</a>
-          <button class="btn-outline" data-goto="contact"><i class="fas fa-paper-plane" aria-hidden="true"></i> Contact</button>
-        </div>
+            <div class="hero-actions">
+              <button class="btn-primary" data-goto="projects">View Projects</button>
+              <a href="https://drive.google.com/file/d/1ZN07Br1Z-2BtZUU2TFno4h2-OjCc0JJ_/view?usp=drive_link" target="_blank" rel="noopener" class="btn-outline"><i class="fas fa-arrow-down" aria-hidden="true"></i> Download Resume</a>
+              <button class="btn-outline" data-goto="contact"><i class="fas fa-paper-plane" aria-hidden="true"></i> Contact</button>
+            </div>
 
-        <div class="hero-links">
-          <a href="https://github.com/HackWithAS" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
-          <span class="dot" aria-hidden="true">&middot;</span>
-          <a href="https://www.linkedin.com/in/hackwithas/" target="_blank" rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
-          <span class="dot" aria-hidden="true">&middot;</span>
-          <a href="mailto:ayushssharmaa@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i> Email</a>
+            <div class="hero-links">
+              <a href="https://github.com/HackWithAS" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+              <span class="dot" aria-hidden="true">&middot;</span>
+              <a href="https://www.linkedin.com/in/hackwithas/" target="_blank" rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+              <span class="dot" aria-hidden="true">&middot;</span>
+              <a href="mailto:ayushssharmaa@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i> Email</a>
+            </div>
+          </div>
+
+          <div class="about-hero-photo">
+            <div class="hero-photo-box">
+              <img src="myphoto.jpeg" alt="Ayush Sharma — HackWithAS" class="hero-photo-img" onerror="this.parentElement.classList.add('img-fallback')">
+              <div class="hero-photo-fallback" aria-hidden="true"><i class="fas fa-user-astronaut"></i></div>
+            </div>
+            <div class="hero-photo-tag"><i class="fas fa-code" aria-hidden="true"></i> B.Tech CSE &middot; 2024&ndash;2028</div>
+          </div>
         </div>
 
         <div class="about-block">
@@ -199,6 +226,7 @@
           <div class="stat"><span class="sn">8</span><span class="sl">Projects</span></div>
           <div class="stat"><span class="sn">7</span><span class="sl">Certifications</span></div>
           <div class="stat"><span class="sn">7.8</span><span class="sl">CGPA</span></div>
+          <div class="stat"><span class="sn" id="ageStat">&ndash;</span><span class="sl">Years Old</span></div>
           <div class="stat"><span class="sn">2028</span><span class="sl">Graduating</span></div>
         </div>
       </div>
@@ -542,4 +570,4 @@
 
 <script src="script.js"></script>
 </body>
-</html>
+</html>s
