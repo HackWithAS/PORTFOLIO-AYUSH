@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.hackwithas.in/sitemap.xml
+Sitemap: https://hackwithas.in
